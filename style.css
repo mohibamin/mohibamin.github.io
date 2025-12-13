@@ -1,8 +1,12 @@
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
-  color: white;
+  background-size: 400% 400%;
+  animation: gradientShift 18s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 header {
@@ -29,10 +33,8 @@ header h1 {
   backdrop-filter: blur(12px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .repo-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  background: rgba(0,234,255,0.12);
 }
 
 .repo-card em {
@@ -41,6 +43,13 @@ header h1 {
   display: block;
   margin-bottom: 8px;
 }
+
+footer {
+  text-align: center;
+  padding: 30px;
+  opacity: 0.6;
+}
+
 /* ===== Featured Project ===== */
 
 .featured-project {
@@ -110,8 +119,14 @@ header h1 {
   box-shadow: 0 10px 30px rgba(0,234,255,0.6);
 }
 
-footer {
-  text-align: center;
-  padding: 30px;
-  opacity: 0.6;
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
