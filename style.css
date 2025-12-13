@@ -40,18 +40,14 @@ body {
   box-shadow: 0 0 30px rgba(0,234,255,0.8);
 }
 
-/* --- FORCE LinkedIn to NOT look like a button --- */
+/* LinkedIn icon */
 .linkedin-btn {
-  background: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
+  background: none;
+  padding: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
-/* Icon itself */
 .linkedin-btn img {
   width: 30px;
   height: 30px;
@@ -59,12 +55,10 @@ body {
   transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-/* Glow ONLY on hover */
 .linkedin-btn:hover img {
   transform: translateY(-2px);
-  filter: invert(1) drop-shadow(0 0 12px rgba(0, 234, 255, 0.95));
+  filter: invert(1) drop-shadow(0 0 12px rgba(0,234,255,0.95));
 }
-
 
 /* HERO */
 .hero {
@@ -99,31 +93,28 @@ body {
   color: #3ad7ff;
 }
 
-.featured-text h2 {
-  margin: 12px 0;
-}
-
 .tags {
   opacity: 0.8;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .featured-text ul {
-  margin-bottom: 26px;
+  margin-bottom: 18px;
 }
 
 .featured-text li {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .view-project-btn {
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
-/* IMAGE */
+/* FEATURED IMAGE */
 .featured-image img {
   width: 100%;
   border-radius: 16px;
+  cursor: pointer;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
@@ -182,7 +173,7 @@ body {
   text-decoration: underline;
 }
 
-/* ===== IMAGE MODAL ===== */
+/* IMAGE MODAL */
 #imageModal {
   position: fixed;
   inset: 0;
@@ -191,12 +182,7 @@ body {
   align-items: center;
   background: rgba(5, 10, 20, 0.6);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   z-index: 9999;
-}
-
-#imageModal.active {
-  display: flex;
 }
 
 .modal-content {
@@ -208,34 +194,21 @@ body {
 
 .modal-img {
   width: 100%;
-  height: auto;
   border-radius: 16px;
-  box-shadow: 0 0 60px rgba(0, 255, 255, 0.35);
+  box-shadow: 0 0 60px rgba(0,255,255,0.35);
 }
 
-/* Close button */
 .close {
   position: absolute;
   top: -40px;
   right: -40px;
   font-size: 32px;
-  color: white;
   cursor: pointer;
-  transition: opacity 0.2s ease;
+  color: white;
 }
 
-.close:hover {
-  opacity: 0.7;
-}
-
-/* Animation */
 @keyframes zoomIn {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
+
