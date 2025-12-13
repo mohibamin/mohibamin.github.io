@@ -6,69 +6,47 @@ const featuredRepos = {
   "Maze-Navigating-Robot": { tag: "Robotics • Algorithms" },
   "Moflix": { tag: "Java • SQL • GUI" },
   "webdevproj": { tag: "HTML • CSS • JavaScript" },
-  "campusconnect": {
-    tag: "Web • Firebase • Auth",
-    description:
-      "Campus event platform with role-based access, authentication, and analytics."
-  }
+  "campusconnect": { tag: "Web • Firebase • Auth" }
 };
 
 fetch(`https://api.github.com/users/${username}/repos`)
   .then(res => res.json())
   .then(repos => {
     const container = document.getElementById("repo-container");
-    container.innerHTML = "";
 
     repos
       .filter(repo => featuredRepos[repo.name])
       .forEach(repo => {
         const meta = featuredRepos[repo.name];
-
         const card = document.createElement("div");
-        card.className = "repo-card fade-in";
+        card.className = "repo-card";
 
         card.innerHTML = `
           <h3>${repo.name}</h3>
-          <span class="tag">${meta.tag}</span>
-          <p>${meta.description || repo.description || "No description provided."}</p>
+          <span>${meta.tag}</span>
+          <p>${repo.description || "No description provided."}</p>
           <a href="${repo.html_url}" target="_blank">View on GitHub →</a>
         `;
 
         container.appendChild(card);
       });
-
-    observeCards();
   });
 
-/* Scroll fade-in animation */
-function observeCards() {
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-
-  document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
-}
-
-// IMAGE MODAL
+/* IMAGE MODAL */
 const modal = document.getElementById("imageModal");
-const modalImg = document.getElementById("modalImage");
+const modalImg = document.getElementById("modalImg");
+const featuredImg = document.getElementById("featuredImage");
+const closeBtn = document.querySelector(".image-modal .close");
 
-document.querySelectorAll(".clickable-image").forEach(img => {
-  img.addEventListener("click", () => {
-    modalImg.src = img.src;
-    modal.classList.add("active");
-  });
-});
+featuredImg.onclick = () => {
+  modal.style.display = "flex";
+  modalImg.src = featuredImg.src;
+};
 
-modal.addEventListener("click", e => {
-  if (e.target.classList.contains("image-modal") || e.target.classList.contains("close-btn")) {
-    modal.classList.remove("active");
-  }
-});
+closeBtn.onclick = () => {
+  modal.style.display = "none";
+};
+
+modal.onclick = e => {
+  if (e.target === modal) modal.style.display = "none";
+};
