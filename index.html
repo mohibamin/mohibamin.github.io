@@ -2,34 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mohib Amin | Portfolio</title>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Background Orbs -->
-  <div class="background-orbs">
-    <div class="orb one"></div>
-    <div class="orb two"></div>
-  </div>
-
   <!-- HERO -->
-  <section class="hero reveal">
+  <header class="hero">
     <h1>Mohib Amin</h1>
     <p>Embedded Systems • Software • Web • Senior Design</p>
-  </section>
+  </header>
 
   <!-- FEATURED PROJECT -->
-  <section class="featured-project">
-    <div class="featured-card reveal">
-      <span class="badge">Featured Senior Design</span>
-      <h2>Smart Parking Pathfinder</h2>
-      <div class="subtitle">Embedded Systems • Web • Real-Time Data</div>
+  <section class="featured reveal">
+    <div class="featured-card">
+      <span class="tag">Featured Senior Design</span>
 
-      <p>
-        A real-time parking occupancy and navigation system integrating Arduino
-        sensors, LEDs, servos, and a live web dashboard using Flask and Socket.IO.
+      <h2>Smart Parking Pathfinder</h2>
+      <p class="subtitle">Embedded Systems • Web • Real-Time Data</p>
+
+      <p class="description">
+        A real-time parking occupancy and navigation system integrating Arduino sensors,
+        LEDs, servos, and a live web dashboard using Flask and Socket.IO.
       </p>
 
       <ul>
@@ -39,111 +35,66 @@
         <li>Interactive browser-based parking map</li>
       </ul>
 
-      <div class="featured-media">
-  <a href="assets/parking-map.png" target="_blank">
-    <img
-      src="assets/parking-map.png"
-      alt="Smart Parking Pathfinder Dashboard"
-    />
-  </a>
-</div>
-      
-      <a
-        class="button"
-        href="https://github.com/KrishPAdmin/MEC-2025-Sr-Design-Parking-Garage"
-        target="_blank"
-      >
-        View Project →
+      <a class="btn" href="https://github.com/KrishPAdmin/MEC-2025-Sr-Design-Parking-Garage" target="_blank">
+        View Project
       </a>
 
-      <div class="note">Team-based senior design project (MKT Labs)</div>
+      <div class="project-image">
+        <img src="assets/parking-map.png" alt="Smart Parking Dashboard">
+      </div>
+
+      <p class="footnote">Team-based senior design project (MKT Labs)</p>
     </div>
   </section>
 
   <!-- PROJECTS -->
-  <section class="projects-section">
-    <h2 class="reveal">Selected Projects</h2>
+  <section class="projects">
+    <h2 class="section-title">Selected Projects</h2>
 
-    <div class="projects-grid">
+    <div class="grid">
 
-      <div class="project-card reveal">
+      <div class="card reveal">
         <h3>ALU-GPU-Design</h3>
-        <div class="tag">Digital Logic • Hardware</div>
-        <p>
-          ALU code design for GPU using 1 Decoder, 1 FSM, 1 ALU Designed Core,
-          2 Latches, and 3 Seven Segment Displays.
-        </p>
-        <a href="https://github.com/mohibamin/ALU-GPU-Design" target="_blank">
-          View on GitHub →
-        </a>
+        <span>Digital Logic • Hardware</span>
+        <p>ALU design using decoder, FSM, latches, and seven-segment displays.</p>
+        <a href="https://github.com/mohibamin/ALU-GPU-Design" target="_blank">View on GitHub →</a>
       </div>
 
-      <div class="project-card reveal">
+      <div class="card reveal">
         <h3>LibraryProjwithJavaFX</h3>
-        <div class="tag">JavaFX • Desktop App</div>
+        <span>JavaFX • Desktop App</span>
         <p>No description provided.</p>
-        <a href="https://github.com/mohibamin/LibraryProjwithJavaFX" target="_blank">
-          View on GitHub →
-        </a>
+        <a href="https://github.com/mohibamin/LibraryProjwithJavaFX" target="_blank">View on GitHub →</a>
       </div>
 
-      <div class="project-card reveal">
+      <div class="card reveal">
         <h3>Maze-Navigating-Robot</h3>
-        <div class="tag">Robotics • Algorithms</div>
+        <span>Robotics • Algorithms</span>
         <p>No description provided.</p>
-        <a href="https://github.com/mohibamin/Maze-Navigating-Robot" target="_blank">
-          View on GitHub →
-        </a>
+        <a href="https://github.com/mohibamin/Maze-Navigating-Robot" target="_blank">View on GitHub →</a>
       </div>
 
-      <div class="project-card reveal">
+      <div class="card reveal">
         <h3>Moflix</h3>
-        <div class="tag">Java • SQL • GUI</div>
-        <p>
-          A telecommunication interface created using Java Swing and FX with a
-          SQL-backed database and live updating.
-        </p>
-        <a href="https://github.com/mohibamin/Moflix" target="_blank">
-          View on GitHub →
-        </a>
+        <span>Java • SQL • GUI</span>
+        <p>Telecommunication interface using Java Swing and SQL.</p>
+        <a href="https://github.com/mohibamin/Moflix" target="_blank">View on GitHub →</a>
       </div>
 
-      <div class="project-card reveal">
+      <div class="card reveal">
         <h3>webdevproj</h3>
-        <div class="tag">HTML • CSS • JavaScript</div>
-        <p>
-          A website designed using HTML, CSS, and JavaScript.
-        </p>
-        <a href="https://github.com/mohibamin/webdevproj" target="_blank">
-          View on GitHub →
-        </a>
+        <span>HTML • CSS • JavaScript</span>
+        <p>Website built using front-end technologies.</p>
+        <a href="https://github.com/mohibamin/webdevproj" target="_blank">View on GitHub →</a>
       </div>
 
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
+  <footer>
     © 2025 Mohib Amin
   </footer>
 
-  <!-- Scroll Reveal Script -->
-  <script>
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    document.querySelectorAll(".reveal").forEach(el => {
-      observer.observe(el);
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
