@@ -40,22 +40,27 @@ body {
   box-shadow: 0 0 30px rgba(0,234,255,0.8);
 }
 
+/* === FORCE LinkedIn ICON TO BE ICON ONLY === */
 .linkedin-btn {
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .linkedin-btn img {
-  width: 28px;
-  height: 28px;
-  filter: invert(1); /* makes it white */
-  transition: filter 0.25s ease, transform 0.25s ease, drop-shadow 0.25s ease;
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+  transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-.linkedin-btn img:hover {
+.linkedin-btn:hover img {
   transform: translateY(-2px);
-  filter: invert(1) drop-shadow(0 0 10px rgba(0,234,255,0.9));
+  filter: invert(1) drop-shadow(0 0 12px rgba(0, 234, 255, 0.95));
 }
 
 /* HERO */
