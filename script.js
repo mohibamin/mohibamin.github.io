@@ -13,6 +13,18 @@ const featuredRepos = {
   "webdevproj": { tag: "HTML • CSS • JavaScript" }
 };
 
+// Scroll reveal animation
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
 fetch(`https://api.github.com/users/${username}/repos`)
   .then(res => res.json())
   .then(repos => {
@@ -24,32 +36,21 @@ fetch(`https://api.github.com/users/${username}/repos`)
         const meta = featuredRepos[repo.name];
 
         const card = document.createElement("div");
-        card.className = "repo-card";
+        card.className = "card reveal";
 
         if (meta.highlight) {
-          card.style.border = "2px solid #00eaff";
+          card.style.border = "1px solid rgba(0,183,255,.6)";
         }
 
         card.innerHTML = `
-          <h2>${repo.name}</h2>
-          <em>${meta.tag}</em>
+          <h3>${repo.name}</h3>
+          <span>${meta.tag}</span>
           <p>${repo.description || "No description provided."}</p>
           <a href="${repo.html_url}" target="_blank">View on GitHub →</a>
         `;
 
         container.appendChild(card);
+        observer.observe(card);
       });
   });
-// Scroll fade-in animation
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-}, { threshold: 0.15 });
 
-document.querySelectorAll(".repo-card, .featured-card").forEach(el => {
-  el.classList.add("fade-in");
-  observer.observe(el);
-});
