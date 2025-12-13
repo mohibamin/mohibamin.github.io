@@ -8,23 +8,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Open modal
   parkingImage.addEventListener("click", () => {
-    modal.classList.add("active");
+    modal.style.display = "flex";
     modalImg.src = parkingImage.src;
     document.body.style.overflow = "hidden";
   });
 
-  // Close modal (X button)
-  closeBtn.addEventListener("click", closeModal);
-
-  // Close modal when clicking background
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal();
+  // Close modal via X
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    document.body.style.overflow = "";
   });
 
-  function closeModal() {
-    modal.classList.remove("active");
-    document.body.style.overflow = "";
-  }
+  // Close modal by clicking background
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      document.body.style.overflow = "";
+    }
+  });
 });
 
 
