@@ -9,12 +9,7 @@
 body {
   margin: 0;
   font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-  background: radial-gradient(
-    circle at top,
-    #0b1f2a 0%,
-    #08161f 45%,
-    #050d12 100%
-  );
+  background-color: #050d12;
   color: #dbeef8;
 }
 
@@ -23,6 +18,12 @@ body {
 ===================== */
 
 .hero {
+  background: radial-gradient(
+    circle at top,
+    #0b1f2a 0%,
+    #08161f 60%,
+    #050d12 100%
+  );
   padding: 120px 20px 100px;
   text-align: center;
 }
@@ -45,7 +46,8 @@ body {
 ===================== */
 
 .featured-project {
-  padding: 80px 20px 120px;
+  background: #050d12;
+  padding: 100px 20px 120px;
   display: flex;
   justify-content: center;
 }
@@ -61,9 +63,10 @@ body {
   border-radius: 22px;
   padding: 56px 60px;
   box-shadow:
-    0 40px 90px rgba(0,0,0,0.7),
+    0 40px 90px rgba(0,0,0,0.8),
     inset 0 1px 0 rgba(255,255,255,0.04);
 }
+
 
 .badge {
   display: inline-block;
@@ -133,14 +136,15 @@ body {
 ===================== */
 
 .projects-section {
-  padding: 120px 40px;
   background: linear-gradient(
     180deg,
     #050d12 0%,
     #08161f 50%,
     #0b1f2a 100%
   );
+  padding: 120px 40px;
 }
+
 
 .projects-title {
   font-size: 2.6rem;
@@ -223,12 +227,13 @@ body {
 ===================== */
 
 .site-footer {
-  padding: 50px 20px;
-  text-align: center;
   background: #050d12;
+  padding: 40px 20px;
+  text-align: center;
   color: #7a96a8;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
+
 
 /* =====================
    RESPONSIVE
