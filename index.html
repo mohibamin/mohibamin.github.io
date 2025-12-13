@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Mohib Amin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohib Amin | Portfolio</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+
   <!-- HERO -->
   <header class="hero">
     <h1>Mohib Amin</h1>
@@ -17,41 +16,47 @@
   </header>
 
   <!-- FEATURED PROJECT -->
-  <section class="featured">
+  <section class="featured-section">
     <div class="featured-card fade-in">
-      <small>Featured Senior Design</small>
-      <h2>Smart Parking Pathfinder</h2>
-      <span>Embedded Systems • Web • Real-Time Data</span>
 
-      <p>
-        A real-time parking occupancy and navigation system integrating Arduino
-        sensors, LEDs, servos, and a live web dashboard using Flask and Socket.IO.
-      </p>
+      <div class="featured-text">
+        <span class="badge">Featured Senior Design</span>
+        <h2>Smart Parking Pathfinder</h2>
+        <p class="tags">Embedded Systems • Web • Real-Time Data</p>
 
-      <ul>
-        <li>Arduino sensors classify spots as empty / occupied</li>
-        <li>WS2812 LEDs show availability in real time</li>
-        <li>Serial → Flask → Socket.IO live streaming</li>
-        <li>Interactive browser-based parking map</li>
-      </ul>
+        <p>
+          A real-time parking occupancy and navigation system integrating Arduino sensors,
+          LEDs, servos, and a live web dashboard using Flask and Socket.IO.
+        </p>
 
-      <a class="btn" href="#" target="_blank">View Project →</a>
+        <ul>
+          <li>Arduino sensors classify spots as empty / occupied</li>
+          <li>WS2812 LEDs show availability in real time</li>
+          <li>Serial → Flask → Socket.IO live streaming</li>
+          <li>Interactive browser-based parking map</li>
+        </ul>
+
+        <a class="btn" href="#" target="_blank">View Project →</a>
+      </div>
+
+      <div class="featured-image">
+        <img src="assets/parking-map.png" alt="Smart Parking Dashboard">
+      </div>
+
     </div>
   </section>
 
   <!-- PROJECTS -->
-  <section class="projects">
-    <h2>Selected Projects</h2>
-    <div id="repo-container">
-      <!-- JS injects cards here -->
-    </div>
+  <section class="projects-section">
+    <h2 class="section-title">Selected Projects</h2>
+    <div id="repo-container" class="repo-grid"></div>
   </section>
 
   <footer>
     © 2025 Mohib Amin
   </footer>
 
-  <!-- JS (must be last) -->
   <script src="script.js"></script>
 </body>
 </html>
+
