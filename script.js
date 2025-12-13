@@ -1,3 +1,7 @@
+/* ================================
+   GitHub Repos Section (UNCHANGED)
+================================ */
+
 const username = "mohibamin";
 
 const featuredRepos = {
@@ -12,14 +16,17 @@ const featuredRepos = {
 fetch(`https://api.github.com/users/${username}/repos`)
   .then(res => res.json())
   .then(repos => {
-    const container = document.getElementById("repo-container");
+    const container = document.querySelector(".project-grid");
+    if (!container) return;
 
     repos
       .filter(repo => featuredRepos[repo.name])
+      .slice(0, 6)
       .forEach(repo => {
         const meta = featuredRepos[repo.name];
+
         const card = document.createElement("div");
-        card.className = "repo-card";
+        card.className = "project-card fade-in";
 
         card.innerHTML = `
           <h3>${repo.name}</h3>
@@ -29,24 +36,49 @@ fetch(`https://api.github.com/users/${username}/repos`)
         `;
 
         container.appendChild(card);
+        observer.observe(card);
       });
   });
 
-/* IMAGE MODAL */
+/* ================================
+   Scroll Fade-In Animation
+================================ */
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+/* ================================
+   Featured Image Modal (NEW)
+================================ */
+
+const featuredImg = document.getElementById("featuredImg");
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");
-const featuredImg = document.getElementById("featuredImage");
-const closeBtn = document.querySelector(".image-modal .close");
 
-featuredImg.onclick = () => {
-  modal.style.display = "flex";
-  modalImg.src = featuredImg.src;
-};
+if (featuredImg && modal && modalImg) {
+  featuredImg.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = featuredImg.src;
+    document.body.style.overflow = "hidden";
+  });
 
-closeBtn.onclick = () => {
-  modal.style.display = "none";
-};
+  modal.addEventListener("click", () => {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+  });
 
-modal.onclick = e => {
-  if (e.target === modal) modal.style.display = "none";
-};
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") {
+      modal.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  });
+}
