@@ -22,26 +22,51 @@ header h1 {
 #repo-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  padding: 40px;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .repo-card {
-  background: rgba(255,255,255,0.08);
-  border-radius: 15px;
-  padding: 20px;
-  backdrop-filter: blur(12px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 40, 55, 0.85),
+    rgba(10, 25, 35, 0.85)
+  );
+  border-radius: 18px;
+  padding: 28px;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  color: #dbeef8;
 }
+
 .repo-card:hover {
-  background: rgba(0,234,255,0.12);
+  transform: translateY(-8px);
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.7),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.repo-card h2 {
+  color: #eaf7ff;
 }
 
 .repo-card em {
-  color: #00eaff;
-  font-style: normal;
-  display: block;
-  margin-bottom: 8px;
+  color: #4cc9f0;
+  font-size: 0.9rem;
+}
+
+.repo-card a {
+  color: #4cc9f0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.repo-card a:hover {
+  text-decoration: underline;
 }
 
 footer {
@@ -138,3 +163,26 @@ footer {
   transform: translateY(0);
 }
 
+/* ===== Projects Section ===== */
+
+.projects-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 20% 10%,
+    rgba(76, 201, 240, 0.08),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.projects-title {
+  font-size: 3rem;
+  margin-bottom: 60px;
+  text-align: left;
+  color: #e6f6ff;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
