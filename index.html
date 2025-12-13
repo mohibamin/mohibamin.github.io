@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mohib Amin | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -17,15 +18,16 @@
   <!-- FEATURED PROJECT -->
   <section class="featured-section">
     <div class="featured-card fade-in">
+
       <div class="featured-content">
-        <span class="badge">Featured Senior Design</span>
+        <span class="featured-label">Featured Senior Design</span>
+
         <h2>Smart Parking Pathfinder</h2>
         <p class="tech">Embedded Systems • Web • Real-Time Data</p>
 
         <p class="desc">
-          A real-time parking occupancy and navigation system integrating
-          Arduino sensors, LEDs, servos, and a live web dashboard using Flask
-          and Socket.IO.
+          A real-time parking occupancy and navigation system integrating Arduino sensors,
+          LEDs, servos, and a live web dashboard using Flask and Socket.IO.
         </p>
 
         <ul>
@@ -35,19 +37,29 @@
           <li>Interactive browser-based parking map</li>
         </ul>
 
-        <a class="btn" href="#" target="_blank">View Project →</a>
+        <!-- ✅ FIXED LINK -->
+        <a
+          href="https://github.com/KrishPAdmin/MEC-2025-Sr-Design-Parking-Garage"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary"
+        >
+          View Project →
+        </a>
       </div>
 
-      <!-- IMAGE -->
       <div class="featured-image">
         <img src="assets/parking-map.png" alt="Smart Parking Dashboard" />
       </div>
+
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section class="projects-section">
     <h2 class="section-title">Selected Projects</h2>
+
+    <!-- REQUIRED CONTAINER -->
     <div id="repo-container" class="projects-grid"></div>
   </section>
 
