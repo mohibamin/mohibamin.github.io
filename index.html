@@ -4,67 +4,114 @@
   <meta charset="UTF-8" />
   <title>Mohib Amin</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
 </head>
+
 <body>
 
-  <!-- TOP RIGHT ACTIONS -->
+  <!-- Top Right Actions -->
   <div class="top-actions">
     <a class="btn primary" href="assets/Mohib Amin Engineering Resume 2026.pdf" download>
       Download Resume
     </a>
+
     <a class="linkedin-btn" href="https://www.linkedin.com/in/mohibamin/" target="_blank">
       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" />
     </a>
   </div>
 
   <!-- HERO -->
-  <section class="hero">
+  <header class="hero">
     <h1>Mohib Amin</h1>
-    <p>Embedded Systems • Software • Web • Senior Design</p>
-  </section>
+    <p class="subtitle">Embedded Systems • Software • Web • Senior Design</p>
+  </header>
 
   <!-- FEATURED PROJECT -->
-  <section class="featured">
-    <div class="featured-card">
-      <div class="featured-text">
-        <span class="eyebrow">Featured Senior Design</span>
-        <h2>Smart Parking Pathfinder</h2>
-        <p class="sub">Embedded Systems • Web • Real-Time Data</p>
+  <section class="featured-card">
+    <div class="featured-text">
+      <span class="eyebrow">Featured Senior Design</span>
+      <h2>Smart Parking Pathfinder</h2>
+      <p class="tags">Embedded Systems • Web • Real-Time Data</p>
 
-        <ul>
-          <li>Arduino sensors classify spots as empty / occupied</li>
-          <li>WS2812 LEDs show availability in real time</li>
-          <li>Serial → Flask → Socket.IO live streaming</li>
-          <li>Interactive browser-based parking map</li>
-        </ul>
+      <ul>
+        <li>Arduino sensors classify spots as empty / occupied</li>
+        <li>WS2812 LEDs show availability in real time</li>
+        <li>Serial → Flask → Socket.IO live streaming</li>
+        <li>Interactive browser-based parking map</li>
+      </ul>
 
-        <a class="btn primary" href="https://github.com/KrishPAdmin/MEC-2025-Sr-Design-Parking-Garage" target="_blank">
-          View Project →
-        </a>
-      </div>
+      <a class="btn primary"
+         href="https://github.com/KrishPAdmin/MEC-2025-Sr-Design-Parking-Garage"
+         target="_blank">
+        View Project →
+      </a>
+    </div>
 
+    <div class="featured-image">
       <img
-        src="assets/parking.png"
-        class="featured-img"
+        id="parkingImage"
+        src="assets/parking-map.png"
         alt="Parking Map"
       />
     </div>
   </section>
 
-  <!-- PROJECT GRID -->
+  <!-- SELECTED PROJECTS -->
   <section class="projects">
     <h2>Selected Projects</h2>
-    <div id="repo-container" class="repo-grid"></div>
+
+    <div class="project-grid">
+      <!-- Row 1 -->
+      <div class="project-card">
+        <h3>ALU-GPU-Design</h3>
+        <p class="tag">Digital Logic • Hardware</p>
+        <p>ALU design using decoder, FSM, ALU core, latches, and seven-segment displays.</p>
+        <a href="https://github.com/mohibamin/ALU-GPU-Design" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <h3>LibraryProjwithJavaFX</h3>
+        <p class="tag">JavaFX • Desktop App</p>
+        <p>No description provided.</p>
+        <a href="https://github.com/mohibamin/LibraryProjwithJavaFX" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Maze-Navigating-Robot</h3>
+        <p class="tag">Robotics • Algorithms</p>
+        <p>No description provided.</p>
+        <a href="https://github.com/mohibamin/Maze-Navigating-Robot" target="_blank">View on GitHub →</a>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="project-card">
+        <h3>Moflix</h3>
+        <p class="tag">Java • SQL • GUI</p>
+        <p>Java Swing & FX app with SQL-backed live-updating database.</p>
+        <a href="https://github.com/mohibamin/Moflix" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <h3>webdevproj</h3>
+        <p class="tag">HTML • CSS • JavaScript</p>
+        <p>Website designed with HTML, CSS, and JavaScript.</p>
+        <a href="https://github.com/mohibamin/webdevproj" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <h3>CampusConnect</h3>
+        <p class="tag">Web • Firebase • Auth</p>
+        <p>Campus event platform with role-based access, authentication, and analytics.</p>
+        <a href="https://github.com/mohibamin/campusconnect" target="_blank">View on GitHub →</a>
+      </div>
+    </div>
   </section>
 
   <!-- IMAGE MODAL -->
-  <div id="image-modal">
-    <span id="close-modal">✕</span>
-    <img id="modal-img" />
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-img" />
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
-
-
