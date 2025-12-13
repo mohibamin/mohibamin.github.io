@@ -181,3 +181,61 @@ body {
 .project-card a:hover {
   text-decoration: underline;
 }
+
+/* ===== IMAGE MODAL ===== */
+#imageModal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(5, 10, 20, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9999;
+}
+
+#imageModal.active {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 75vw;
+  max-height: 75vh;
+  animation: zoomIn 0.25s ease-out;
+}
+
+.modal-img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 0 60px rgba(0, 255, 255, 0.35);
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.close:hover {
+  opacity: 0.7;
+}
+
+/* Animation */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
