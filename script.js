@@ -3,9 +3,10 @@ const username = "mohibamin";
 const featuredRepos = {
   "MEC-2025-Sr-Design-Parking-Garage": {
     tag: "Senior Design • Embedded • Web",
-    highlight: true
+    highlight: true,
+    external: "https://github.com/KrishPAdmin/MEC-2025-Sr-Design-Parking-Garage"
   },
-  "CampusConnect": { tag: "Full Stack • Firebase • React" },
+  "CampusConnect": { tag: "Full-Stack • Firebase • Auth" },
   "ALU-GPU-Design": { tag: "Digital Logic • Hardware" },
   "LibraryProjwithJavaFX": { tag: "JavaFX • Desktop App" },
   "Maze-Navigating-Robot": { tag: "Robotics • Algorithms" },
@@ -26,11 +27,15 @@ fetch(`https://api.github.com/users/${username}/repos`)
         const card = document.createElement("div");
         card.className = "repo-card fade-in";
 
+        const link = meta.external || repo.html_url;
+
         card.innerHTML = `
           <h3>${repo.name}</h3>
           <span>${meta.tag}</span>
           <p>${repo.description || "No description provided."}</p>
-          <a href="${repo.html_url}" target="_blank">View on GitHub →</a>
+          <a href="${link}" target="_blank" rel="noopener noreferrer">
+            View on GitHub →
+          </a>
         `;
 
         container.appendChild(card);
@@ -38,7 +43,7 @@ fetch(`https://api.github.com/users/${username}/repos`)
       });
   });
 
-/* SCROLL ANIMATION */
+/* Scroll animation */
 const observer = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
