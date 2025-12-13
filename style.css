@@ -53,72 +53,80 @@ footer {
 /* ===== Featured Project ===== */
 
 .featured-project {
-  padding: 60px 40px;
-  text-align: center;
-}
-
-.featured-project h2 {
-  font-size: 2.2rem;
-  margin-bottom: 30px;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .featured-card {
   max-width: 900px;
-  margin: auto;
+  width: 100%;
   background: linear-gradient(
     135deg,
-    rgba(0,234,255,0.15),
+    rgba(0,234,255,0.18),
     rgba(255,255,255,0.05)
   );
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-  backdrop-filter: blur(14px);
+  border-radius: 24px;
+  padding: 50px 60px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+  backdrop-filter: blur(16px);
   position: relative;
-  overflow: hidden;
 }
 
-.featured-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at top right,
-    rgba(0,234,255,0.25),
-    transparent 60%
-  );
-  opacity: 0.6;
+.badge {
+  display: inline-block;
+  background: rgba(0,234,255,0.15);
+  color: #00eaff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+}
+
+.featured-card h2 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
 }
 
 .featured-tags {
   color: #00eaff;
   margin-bottom: 20px;
+  font-weight: 500;
 }
 
-.featured-card ul {
+.featured-desc {
+  max-width: 700px;
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+.feature-list {
   text-align: left;
   max-width: 600px;
-  margin: 20px auto;
-  line-height: 1.8;
+  margin: 0 0 30px 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.feature-list li {
+  margin-bottom: 10px;
 }
 
 .featured-btn {
   display: inline-block;
-  margin-top: 25px;
-  padding: 14px 28px;
+  padding: 14px 30px;
   background: #00eaff;
   color: #003344;
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .featured-btn:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0,234,255,0.6);
+  box-shadow: 0 12px 35px rgba(0,234,255,0.6);
 }
-
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
