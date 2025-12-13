@@ -40,17 +40,18 @@ body {
   box-shadow: 0 0 30px rgba(0,234,255,0.8);
 }
 
-/* === FORCE LinkedIn ICON TO BE ICON ONLY === */
+/* --- FORCE LinkedIn to NOT look like a button --- */
 .linkedin-btn {
   background: none !important;
+  box-shadow: none !important;
   padding: 0 !important;
   border-radius: 0 !important;
-  box-shadow: none !important;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Icon itself */
 .linkedin-btn img {
   width: 30px;
   height: 30px;
@@ -58,10 +59,12 @@ body {
   transition: transform 0.25s ease, filter 0.25s ease;
 }
 
+/* Glow ONLY on hover */
 .linkedin-btn:hover img {
   transform: translateY(-2px);
   filter: invert(1) drop-shadow(0 0 12px rgba(0, 234, 255, 0.95));
 }
+
 
 /* HERO */
 .hero {
