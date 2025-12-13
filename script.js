@@ -2,7 +2,8 @@ const username = "mohibamin";
 
 const featuredRepos = {
   "MEC-2025-Sr-Design-Parking-Garage": {
-    tag: "Senior Design • Embedded • Web"
+    tag: "Senior Design • Embedded • Web",
+    highlight: true
   },
   "Moflix": { tag: "Java • SQL • GUI" },
   "Maze-Navigating-Robot": { tag: "Robotics • Algorithms" },
@@ -11,24 +12,11 @@ const featuredRepos = {
   "webdevproj": { tag: "HTML • CSS • JavaScript" }
 };
 
-// Scroll animation
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  { threshold: 0.15 }
-);
+const container = document.getElementById("repo-container");
 
-// Fetch GitHub repos
 fetch(`https://api.github.com/users/${username}/repos`)
   .then(res => res.json())
   .then(repos => {
-    const container = document.getElementById("repo-container");
-
     repos
       .filter(repo => featuredRepos[repo.name])
       .forEach(repo => {
@@ -39,7 +27,7 @@ fetch(`https://api.github.com/users/${username}/repos`)
 
         card.innerHTML = `
           <h3>${repo.name}</h3>
-          <span class="tag">${meta.tag}</span>
+          <span>${meta.tag}</span>
           <p>${repo.description || "No description provided."}</p>
           <a href="${repo.html_url}" target="_blank">View on GitHub →</a>
         `;
@@ -47,5 +35,16 @@ fetch(`https://api.github.com/users/${username}/repos`)
         container.appendChild(card);
         observer.observe(card);
       });
-  })
-  .catch(err => console.error(err));
+  });
+
+/* Scroll animation */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+
