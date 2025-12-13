@@ -40,3 +40,16 @@ fetch(`https://api.github.com/users/${username}/repos`)
         container.appendChild(card);
       });
   });
+// Scroll fade-in animation
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".repo-card, .featured-card").forEach(el => {
+  el.classList.add("fade-in");
+  observer.observe(el);
+});
