@@ -2,83 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mohib Amin | Portfolio</title>
-
-  <!-- Main styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-  <!-- ================= HERO ================= -->
-  <header class="hero">
-  <div class="hero-content">
-    <h1>Mohib Amin</h1>
-    <p class="hero-subtitle">
-      Embedded Systems • Software • Web • Senior Design
-    </p>
+  <!-- Background Orbs -->
+  <div class="background-orbs">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
   </div>
-</header>
 
-  <!-- ================= FEATURED PROJECT ================= -->
+  <!-- HERO -->
+  <section class="hero reveal">
+    <h1>Mohib Amin</h1>
+    <p>Embedded Systems • Software • Web • Senior Design</p>
+  </section>
+
+  <!-- FEATURED PROJECT -->
   <section class="featured-project">
-    <div class="featured-card">
-
-      <span class="badge">🚗 Featured Senior Design</span>
-
+    <div class="featured-card reveal">
+      <span class="badge">Featured Senior Design</span>
       <h2>Smart Parking Pathfinder</h2>
+      <div class="subtitle">Embedded Systems • Web • Real-Time Data</div>
 
-      <p class="featured-tags">
-        Embedded Systems • Web • Real-Time Data
+      <p>
+        A real-time parking occupancy and navigation system integrating Arduino
+        sensors, LEDs, servos, and a live web dashboard using Flask and Socket.IO.
       </p>
 
-      <p class="featured-desc">
-        A real-time parking occupancy and navigation system that integrates
-        Arduino sensors, LEDs, servos, and a live web dashboard using
-        Flask and Socket.IO.
-      </p>
-
-      <ul class="feature-list">
-        <li>🔌 Arduino sensors classify spots as empty / occupied</li>
-        <li>💡 WS2812 LEDs show availability in real time</li>
-        <li>📡 Serial → Flask → Socket.IO live streaming</li>
-        <li>🗺 Interactive browser-based parking map</li>
+      <ul>
+        <li>Arduino sensors classify spots as empty / occupied</li>
+        <li>WS2812 LEDs show availability in real time</li>
+        <li>Serial → Flask → Socket.IO live streaming</li>
+        <li>Interactive browser-based parking map</li>
       </ul>
 
       <a
-        class="featured-btn"
+        class="button"
         href="https://github.com/KrishPAdmin/MEC-2025-Sr-Design-Parking-Garage"
         target="_blank"
       >
         View Project →
       </a>
 
-      <p class="collab-note">
-        Team-based senior design project (MKT Labs)
-      </p>
+      <div class="note">Team-based senior design project (MKT Labs)</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects-section">
+    <h2 class="reveal">Selected Projects</h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <h3>ALU-GPU-Design</h3>
+        <div class="tag">Digital Logic • Hardware</div>
+        <p>
+          ALU code design for GPU using 1 Decoder, 1 FSM, 1 ALU Designed Core,
+          2 Latches, and 3 Seven Segment Displays.
+        </p>
+        <a href="https://github.com/mohibamin/ALU-GPU-Design" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
+
+      <div class="project-card reveal">
+        <h3>LibraryProjwithJavaFX</h3>
+        <div class="tag">JavaFX • Desktop App</div>
+        <p>No description provided.</p>
+        <a href="https://github.com/mohibamin/LibraryProjwithJavaFX" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
+
+      <div class="project-card reveal">
+        <h3>Maze-Navigating-Robot</h3>
+        <div class="tag">Robotics • Algorithms</div>
+        <p>No description provided.</p>
+        <a href="https://github.com/mohibamin/Maze-Navigating-Robot" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
+
+      <div class="project-card reveal">
+        <h3>Moflix</h3>
+        <div class="tag">Java • SQL • GUI</div>
+        <p>
+          A telecommunication interface created using Java Swing and FX with a
+          SQL-backed database and live updating.
+        </p>
+        <a href="https://github.com/mohibamin/Moflix" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
+
+      <div class="project-card reveal">
+        <h3>webdevproj</h3>
+        <div class="tag">HTML • CSS • JavaScript</div>
+        <p>
+          A website designed using HTML, CSS, and JavaScript.
+        </p>
+        <a href="https://github.com/mohibamin/webdevproj" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
 
     </div>
   </section>
 
-  <!-- ================= PROJECTS ================= -->
-  <section class="projects-section">
-    <h2 class="projects-title">Selected Projects</h2>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    © 2025 Mohib Amin
+  </footer>
 
-    <!-- GitHub repos injected here by script.js -->
-    <div id="repo-container"></div>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
- <footer class="site-footer">
-  <p>© 2025 Mohib Amin</p>
-</footer>
-
-  <!-- ================= SCRIPTS ================= -->
-  <script src="script.js"></script>
+  <!-- Scroll Reveal Script -->
   <script>
-    // Auto-update year
-    document.getElementById("year").textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    document.querySelectorAll(".reveal").forEach(el => {
+      observer.observe(el);
+    });
   </script>
 
 </body>
