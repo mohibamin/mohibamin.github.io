@@ -1,23 +1,160 @@
+/* =====================
+   GLOBAL
+===================== */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-size: 400% 400%;
-  animation: gradientShift 18s ease infinite;
+  margin: 0;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: radial-gradient(
+    circle at top,
+    #0b1f2a 0%,
+    #08161f 45%,
+    #050d12 100%
+  );
+  color: #dbeef8;
 }
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+/* =====================
+   HERO
+===================== */
 
-header {
+.hero {
+  padding: 120px 20px 100px;
   text-align: center;
-  padding: 60px 20px;
 }
 
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+.hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: #f1fbff;
 }
+
+.hero-subtitle {
+  margin-top: 14px;
+  font-size: 1.05rem;
+  color: #9bb6c7;
+}
+
+/* =====================
+   FEATURED PROJECT
+===================== */
+
+.featured-project {
+  padding: 80px 20px 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.featured-card {
+  max-width: 950px;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 30, 42, 0.95),
+    rgba(8, 20, 30, 0.95)
+  );
+  border-radius: 22px;
+  padding: 56px 60px;
+  box-shadow:
+    0 40px 90px rgba(0,0,0,0.7),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  color: #5ecbff;
+  background: rgba(94, 203, 255, 0.12);
+  border-radius: 20px;
+}
+
+.featured-card h2 {
+  font-size: 2.4rem;
+  margin: 10px 0;
+  color: #f1fbff;
+}
+
+.featured-tags {
+  color: #5ecbff;
+  font-size: 0.95rem;
+  margin-bottom: 22px;
+}
+
+.featured-desc {
+  max-width: 720px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  color: #cfe3ef;
+}
+
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 34px;
+  max-width: 600px;
+}
+
+.feature-list li {
+  margin-bottom: 10px;
+  color: #cfe3ef;
+}
+
+.featured-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #5ecbff;
+  color: #051018;
+  border-radius: 30px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.featured-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(94,203,255,0.45);
+}
+
+.collab-note {
+  margin-top: 22px;
+  font-size: 0.85rem;
+  color: #8ea6b5;
+}
+
+/* =====================
+   PROJECTS SECTION
+===================== */
+
+.projects-section {
+  padding: 120px 40px;
+  background: linear-gradient(
+    180deg,
+    #050d12 0%,
+    #08161f 50%,
+    #0b1f2a 100%
+  );
+}
+
+.projects-title {
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 70px;
+  color: #eaf7ff;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =====================
+   REPO GRID
+===================== */
 
 #repo-container {
   display: grid;
@@ -30,37 +167,49 @@ header h1 {
 .repo-card {
   background: linear-gradient(
     180deg,
-    rgba(20, 40, 55, 0.85),
-    rgba(10, 25, 35, 0.85)
+    rgba(14, 30, 42, 0.95),
+    rgba(8, 20, 30, 0.95)
   );
   border-radius: 18px;
   padding: 28px;
-  backdrop-filter: blur(10px);
   box-shadow:
-    0 20px 40px rgba(0,0,0,0.5),
-    inset 0 1px 0 rgba(255,255,255,0.05);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  color: #dbeef8;
+    0 25px 60px rgba(0,0,0,0.65),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .repo-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow:
-    0 30px 60px rgba(0,0,0,0.7),
-    inset 0 1px 0 rgba(255,255,255,0.08);
+    0 35px 80px rgba(0,0,0,0.8),
+    inset 0 1px 0 rgba(255,255,255,0.06);
 }
 
 .repo-card h2 {
-  color: #eaf7ff;
+  margin-top: 0;
+  margin-bottom: 6px;
+  color: #f1fbff;
+  font-size: 1.3rem;
 }
 
 .repo-card em {
-  color: #4cc9f0;
-  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 14px;
+  color: #5ecbff;
+  font-style: normal;
+  font-size: 0.85rem;
+}
+
+.repo-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #cfe3ef;
 }
 
 .repo-card a {
-  color: #4cc9f0;
+  display: inline-block;
+  margin-top: 12px;
+  color: #5ecbff;
   text-decoration: none;
   font-weight: 500;
 }
@@ -69,120 +218,33 @@ header h1 {
   text-decoration: underline;
 }
 
-footer {
+/* =====================
+   FOOTER
+===================== */
+
+.site-footer {
+  padding: 50px 20px;
   text-align: center;
-  padding: 30px;
-  opacity: 0.6;
+  background: #050d12;
+  color: #7a96a8;
+  font-size: 0.9rem;
 }
 
-/* ===== Featured Project ===== */
+/* =====================
+   RESPONSIVE
+===================== */
 
-.featured-project {
-  padding: 80px 20px;
-  display: flex;
-  justify-content: center;
+@media (max-width: 768px) {
+  .featured-card {
+    padding: 40px 28px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.6rem;
+  }
+
+  .projects-title {
+    font-size: 2.2rem;
+  }
 }
 
-.featured-card {
-  max-width: 900px;
-  width: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(0,234,255,0.18),
-    rgba(255,255,255,0.05)
-  );
-  border-radius: 24px;
-  padding: 50px 60px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
-  backdrop-filter: blur(16px);
-  position: relative;
-}
-
-.badge {
-  display: inline-block;
-  background: rgba(0,234,255,0.15);
-  color: #00eaff;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  margin-bottom: 18px;
-}
-
-.featured-card h2 {
-  font-size: 2.4rem;
-  margin-bottom: 10px;
-}
-
-.featured-tags {
-  color: #00eaff;
-  margin-bottom: 20px;
-  font-weight: 500;
-}
-
-.featured-desc {
-  max-width: 700px;
-  margin-bottom: 25px;
-  line-height: 1.7;
-}
-
-.feature-list {
-  text-align: left;
-  max-width: 600px;
-  margin: 0 0 30px 0;
-  padding-left: 0;
-  list-style: none;
-}
-
-.feature-list li {
-  margin-bottom: 10px;
-}
-
-.featured-btn {
-  display: inline-block;
-  padding: 14px 30px;
-  background: #00eaff;
-  color: #003344;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.featured-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 35px rgba(0,234,255,0.6);
-}
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===== Projects Section ===== */
-
-.projects-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 20% 10%,
-    rgba(76, 201, 240, 0.08),
-    transparent 60%
-  );
-  pointer-events: none;
-}
-
-.projects-title {
-  font-size: 3rem;
-  margin-bottom: 60px;
-  text-align: left;
-  color: #e6f6ff;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
