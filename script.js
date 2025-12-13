@@ -56,3 +56,19 @@ function observeCards() {
   document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
 }
 
+// IMAGE MODAL
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+
+document.querySelectorAll(".clickable-image").forEach(img => {
+  img.addEventListener("click", () => {
+    modalImg.src = img.src;
+    modal.classList.add("active");
+  });
+});
+
+modal.addEventListener("click", e => {
+  if (e.target.classList.contains("image-modal") || e.target.classList.contains("close-btn")) {
+    modal.classList.remove("active");
+  }
+});
