@@ -1,55 +1,65 @@
-/* =====================
-   GLOBAL
-===================== */
+/* =========================
+   GLOBAL RESET & THEME
+========================= */
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
-  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-  background-color: #050d12;
+  padding: 0;
+  background-color: #050d12 !important;
   color: #dbeef8;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
-/* =====================
-   HERO
-===================== */
-
-.hero {
+/* Subtle dark vignette */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
   background: radial-gradient(
     circle at top,
-    #0b1f2a 0%,
-    #08161f 60%,
-    #050d12 100%
+    rgba(18, 48, 70, 0.35),
+    rgba(5, 13, 18, 1) 70%
   );
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
   padding: 120px 20px 100px;
   text-align: center;
 }
 
-.hero-content h1 {
+.hero h1 {
   font-size: 3.2rem;
   font-weight: 600;
-  margin: 0;
-  color: #f1fbff;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
 }
 
-.hero-subtitle {
-  margin-top: 14px;
-  font-size: 1.05rem;
-  color: #9bb6c7;
+.hero p {
+  font-size: 1rem;
+  color: #9db6c7;
 }
 
-/* =====================
+/* =========================
    FEATURED PROJECT
-===================== */
+========================= */
 
 .featured-project {
-  background: #050d12;
-  padding: 100px 20px 120px;
   display: flex;
   justify-content: center;
+  padding: 80px 20px 120px;
 }
 
 .featured-card {
@@ -67,189 +77,129 @@ body {
     inset 0 1px 0 rgba(255,255,255,0.04);
 }
 
-
-.badge {
-  display: inline-block;
-  margin-bottom: 18px;
-  padding: 6px 14px;
-  font-size: 0.8rem;
-  color: #5ecbff;
-  background: rgba(94, 203, 255, 0.12);
-  border-radius: 20px;
-}
-
 .featured-card h2 {
-  font-size: 2.4rem;
-  margin: 10px 0;
-  color: #f1fbff;
+  font-size: 2.1rem;
+  margin-bottom: 8px;
 }
 
-.featured-tags {
-  color: #5ecbff;
+.featured-card .subtitle {
+  color: #5fd3ff;
   font-size: 0.95rem;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
-.featured-desc {
-  max-width: 720px;
-  line-height: 1.7;
-  margin-bottom: 28px;
-  color: #cfe3ef;
+.featured-card p {
+  color: #c4d6e2;
+  line-height: 1.6;
 }
 
-.feature-list {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 34px;
-  max-width: 600px;
+.featured-card ul {
+  padding-left: 18px;
+  margin: 20px 0;
 }
 
-.feature-list li {
-  margin-bottom: 10px;
-  color: #cfe3ef;
+.featured-card li {
+  margin-bottom: 8px;
+  color: #cfe4f2;
 }
 
-.featured-btn {
+.featured-card a.button {
   display: inline-block;
-  padding: 14px 32px;
-  background: #5ecbff;
-  color: #051018;
-  border-radius: 30px;
-  font-weight: 500;
+  margin-top: 20px;
+  padding: 12px 22px;
+  background: #0fb9ff;
+  color: #021017;
+  border-radius: 999px;
   text-decoration: none;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.featured-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 40px rgba(94,203,255,0.45);
+.featured-card a.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(15, 185, 255, 0.35);
 }
 
-.collab-note {
-  margin-top: 22px;
-  font-size: 0.85rem;
-  color: #8ea6b5;
-}
-
-/* =====================
+/* =========================
    PROJECTS SECTION
-===================== */
+========================= */
 
 .projects-section {
-  background: linear-gradient(
-    180deg,
-    #050d12 0%,
-    #08161f 50%,
-    #0b1f2a 100%
-  );
-  padding: 120px 40px;
+  padding: 100px 40px;
 }
 
-
-.projects-title {
-  font-size: 2.6rem;
-  font-weight: 600;
-  margin-bottom: 70px;
-  color: #eaf7ff;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+.projects-section h2 {
+  font-size: 1.9rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #e6f2f9;
 }
 
-/* =====================
-   REPO GRID
-===================== */
-
-#repo-container {
+/* Grid */
+.projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
+  gap: 36px;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
 }
 
-.repo-card {
+/* Project Cards */
+.project-card {
   background: linear-gradient(
     180deg,
-    rgba(14, 30, 42, 0.95),
-    rgba(8, 20, 30, 0.95)
+    rgba(20, 36, 48, 0.95),
+    rgba(12, 22, 30, 0.95)
   );
   border-radius: 18px;
   padding: 28px;
-  box-shadow:
-    0 25px 60px rgba(0,0,0,0.65),
-    inset 0 1px 0 rgba(255,255,255,0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.75);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.repo-card:hover {
+.project-card:hover {
   transform: translateY(-6px);
-  box-shadow:
-    0 35px 80px rgba(0,0,0,0.8),
-    inset 0 1px 0 rgba(255,255,255,0.06);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.9);
 }
 
-.repo-card h2 {
+.project-card h3 {
   margin-top: 0;
+  font-size: 1.25rem;
   margin-bottom: 6px;
-  color: #f1fbff;
-  font-size: 1.3rem;
 }
 
-.repo-card em {
-  display: block;
-  margin-bottom: 14px;
-  color: #5ecbff;
-  font-style: normal;
+.project-card .tag {
+  color: #5fd3ff;
   font-size: 0.85rem;
+  margin-bottom: 12px;
 }
 
-.repo-card p {
+.project-card p {
   font-size: 0.95rem;
-  line-height: 1.6;
-  color: #cfe3ef;
+  color: #c4d6e2;
+  line-height: 1.5;
 }
 
-.repo-card a {
+.project-card a {
   display: inline-block;
   margin-top: 12px;
-  color: #5ecbff;
+  color: #0fb9ff;
   text-decoration: none;
   font-weight: 500;
 }
 
-.repo-card a:hover {
+.project-card a:hover {
   text-decoration: underline;
 }
 
-/* =====================
+/* =========================
    FOOTER
-===================== */
+========================= */
 
 .site-footer {
-  background: #050d12;
   padding: 40px 20px;
   text-align: center;
   color: #7a96a8;
   font-size: 0.85rem;
-}
-
-
-/* =====================
-   RESPONSIVE
-===================== */
-
-@media (max-width: 768px) {
-  .featured-card {
-    padding: 40px 28px;
-  }
-
-  .hero-content h1 {
-    font-size: 2.6rem;
-  }
-
-  .projects-title {
-    font-size: 2.2rem;
-  }
 }
 
