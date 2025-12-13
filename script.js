@@ -5,10 +5,11 @@ const featuredRepos = {
     tag: "Senior Design • Embedded • Web",
     highlight: true
   },
-  "Moflix": { tag: "Java • SQL • GUI" },
-  "Maze-Navigating-Robot": { tag: "Robotics • Algorithms" },
-  "LibraryProjwithJavaFX": { tag: "JavaFX • Desktop App" },
+  "CampusConnect": { tag: "Full Stack • Firebase • React" },
   "ALU-GPU-Design": { tag: "Digital Logic • Hardware" },
+  "LibraryProjwithJavaFX": { tag: "JavaFX • Desktop App" },
+  "Maze-Navigating-Robot": { tag: "Robotics • Algorithms" },
+  "Moflix": { tag: "Java • SQL • GUI" },
   "webdevproj": { tag: "HTML • CSS • JavaScript" }
 };
 
@@ -37,14 +38,14 @@ fetch(`https://api.github.com/users/${username}/repos`)
       });
   });
 
-/* Scroll animation */
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-}, { threshold: 0.15 });
-
-document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
-
+/* SCROLL ANIMATION */
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
