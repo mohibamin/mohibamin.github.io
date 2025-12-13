@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-  /* PROJECT DATA (SINGLE SOURCE OF TRUTH) */
   const projects = [
     {
       name: "ALU-GPU-Design",
@@ -36,36 +34,35 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "CampusConnect",
       tag: "Web • Firebase • Auth",
       desc: "Campus event platform with role-based access, authentication, and analytics.",
-      url: "https://github.com/mohibamin/CampusConnect"
+      url: "https://github.com/mohibamin/campusconnect"
     }
   ];
 
   const container = document.getElementById("repo-container");
+  if (!container) return;
 
   projects.forEach(p => {
     const card = document.createElement("div");
-    card.className = "repo-card";
+    card.className = "repo-card fade-in";
+
     card.innerHTML = `
       <h3>${p.name}</h3>
-      <p class="sub">${p.tag}</p>
+      <span class="tag">${p.tag}</span>
       <p>${p.desc}</p>
-      <a href="${p.url}" target="_blank">View on GitHub →</a>
+      <a href="${p.url}" target="_blank" class="github-link">
+        View on GitHub →
+      </a>
     `;
+
     container.appendChild(card);
   });
 
-  /* IMAGE MODAL */
-  const img = document.querySelector(".featured-img");
-  const modal = document.getElementById("image-modal");
-  const modalImg = document.getElementById("modal-img");
-  const close = document.getElementById("close-modal");
+  /* Fade-in animation */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add("visible");
+    });
+  }, { threshold: 0.15 });
 
-  img.onclick = () => {
-    modal.style.display = "flex";
-    modalImg.src = img.src;
-  };
-
-  close.onclick = () => modal.style.display = "none";
-  modal.onclick = e => e.target === modal && (modal.style.display = "none");
+  document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
 });
-
