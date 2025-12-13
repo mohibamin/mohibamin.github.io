@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mohib Amin | Portfolio</title>
+  <title>Mohib Amin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
+<body>
   <!-- HERO -->
   <header class="hero">
     <h1>Mohib Amin</h1>
@@ -16,16 +17,15 @@
   </header>
 
   <!-- FEATURED PROJECT -->
-  <section class="featured reveal">
-    <div class="featured-card">
-      <span class="tag">Featured Senior Design</span>
-
+  <section class="featured">
+    <div class="featured-card fade-in">
+      <small>Featured Senior Design</small>
       <h2>Smart Parking Pathfinder</h2>
-      <p class="subtitle">Embedded Systems • Web • Real-Time Data</p>
+      <span>Embedded Systems • Web • Real-Time Data</span>
 
-      <p class="description">
-        A real-time parking occupancy and navigation system integrating Arduino sensors,
-        LEDs, servos, and a live web dashboard using Flask and Socket.IO.
+      <p>
+        A real-time parking occupancy and navigation system integrating Arduino
+        sensors, LEDs, servos, and a live web dashboard using Flask and Socket.IO.
       </p>
 
       <ul>
@@ -35,59 +35,15 @@
         <li>Interactive browser-based parking map</li>
       </ul>
 
-      <a class="btn" href="https://github.com/KrishPAdmin/MEC-2025-Sr-Design-Parking-Garage" target="_blank">
-        View Project
-      </a>
-
-      <div class="project-image">
-        <img src="assets/parking-map.png" alt="Smart Parking Dashboard">
-      </div>
-
-      <p class="footnote">Team-based senior design project (MKT Labs)</p>
+      <a class="btn" href="#" target="_blank">View Project →</a>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section class="projects">
-    <h2 class="section-title">Selected Projects</h2>
-
-    <div class="grid">
-
-      <div class="card reveal">
-        <h3>ALU-GPU-Design</h3>
-        <span>Digital Logic • Hardware</span>
-        <p>ALU design using decoder, FSM, latches, and seven-segment displays.</p>
-        <a href="https://github.com/mohibamin/ALU-GPU-Design" target="_blank">View on GitHub →</a>
-      </div>
-
-      <div class="card reveal">
-        <h3>LibraryProjwithJavaFX</h3>
-        <span>JavaFX • Desktop App</span>
-        <p>No description provided.</p>
-        <a href="https://github.com/mohibamin/LibraryProjwithJavaFX" target="_blank">View on GitHub →</a>
-      </div>
-
-      <div class="card reveal">
-        <h3>Maze-Navigating-Robot</h3>
-        <span>Robotics • Algorithms</span>
-        <p>No description provided.</p>
-        <a href="https://github.com/mohibamin/Maze-Navigating-Robot" target="_blank">View on GitHub →</a>
-      </div>
-
-      <div class="card reveal">
-        <h3>Moflix</h3>
-        <span>Java • SQL • GUI</span>
-        <p>Telecommunication interface using Java Swing and SQL.</p>
-        <a href="https://github.com/mohibamin/Moflix" target="_blank">View on GitHub →</a>
-      </div>
-
-      <div class="card reveal">
-        <h3>webdevproj</h3>
-        <span>HTML • CSS • JavaScript</span>
-        <p>Website built using front-end technologies.</p>
-        <a href="https://github.com/mohibamin/webdevproj" target="_blank">View on GitHub →</a>
-      </div>
-
+    <h2>Selected Projects</h2>
+    <div id="repo-container">
+      <!-- JS injects cards here -->
     </div>
   </section>
 
@@ -95,6 +51,7 @@
     © 2025 Mohib Amin
   </footer>
 
+  <!-- JS (must be last) -->
   <script src="script.js"></script>
 </body>
 </html>
