@@ -1,52 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mohib Amin | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Main styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<header>
+  <!-- ================= HERO ================= -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>
+        <span class="hero-icon">🚀</span>
+        Mohib Amin
+      </h1>
+
+      <p class="hero-subtitle">
+        Embedded Systems • Software • Web • Senior Design
+      </p>
+    </div>
+  </header>
+
+  <!-- ================= FEATURED PROJECT ================= -->
   <section class="featured-project">
-  <div class="featured-card">
-    <span class="badge">🚗 Featured Senior Design</span>
+    <div class="featured-card">
 
-    <h2>Smart Parking Pathfinder</h2>
-    <p class="featured-tags">
-      Embedded Systems • Web • Real-Time Data
+      <span class="badge">🚗 Featured Senior Design</span>
+
+      <h2>Smart Parking Pathfinder</h2>
+
+      <p class="featured-tags">
+        Embedded Systems • Web • Real-Time Data
+      </p>
+
+      <p class="featured-desc">
+        A real-time parking occupancy and navigation system that integrates
+        Arduino sensors, LEDs, servos, and a live web dashboard using
+        Flask and Socket.IO.
+      </p>
+
+      <ul class="feature-list">
+        <li>🔌 Arduino sensors classify spots as empty / occupied</li>
+        <li>💡 WS2812 LEDs show availability in real time</li>
+        <li>📡 Serial → Flask → Socket.IO live streaming</li>
+        <li>🗺 Interactive browser-based parking map</li>
+      </ul>
+
+      <a
+        class="featured-btn"
+        href="https://github.com/KrishPAdmin/MEC-2025-Sr-Design-Parking-Garage"
+        target="_blank"
+      >
+        View Project →
+      </a>
+
+      <p class="collab-note">
+        Team-based senior design project (MKT Labs)
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="projects-section">
+    <h2 class="projects-title">Selected Projects</h2>
+
+    <!-- GitHub repos injected here by script.js -->
+    <div id="repo-container"></div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <p>
+      © <span id="year"></span> Mohib Amin · Built with ❤️ using GitHub Pages
     </p>
+  </footer>
 
-    <p class="featured-desc">
-      A real-time parking occupancy and navigation system integrating
-      Arduino sensors, LEDs, servos, and a live web dashboard using
-      Flask and Socket.IO.
-    </p>
+  <!-- ================= SCRIPTS ================= -->
+  <script src="script.js"></script>
+  <script>
+    // Auto-update year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
-    <ul class="feature-list">
-      <li>🔌 Arduino sensors classify spots as empty / occupied</li>
-      <li>💡 WS2812 LEDs display availability in real time</li>
-      <li>📡 Serial → Flask → Socket.IO data streaming</li>
-      <li>🗺 Interactive browser-based parking map</li>
-    </ul>
-
-    <a class="featured-btn"
-       href="https://github.com/KrishPAdmin/MEC-2025-Sr-Design-Parking-Garage"
-       target="_blank">
-      View Project →
-    </a>
-  </div>
-</section>
-  <h1>🚀 Mohib Amin</h1>
-  <p>Embedded Systems • Software • Web • Senior Design</p>
-</header>
-
-<section id="repo-container"></section>
-
-<footer>
-  <p>Mohib Amin</p>
-</footer>
-
-<script src="script.js"></script>
 </body>
 </html>
