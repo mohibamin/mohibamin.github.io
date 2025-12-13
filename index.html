@@ -2,71 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Mohib Amin | Portfolio</title>
+  <title>Mohib Amin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="hero">
-    <h1>Mohib Amin</h1>
-    <p>Embedded Systems • Software • Web • Senior Design</p>
-  </header>
+<header class="hero">
+  <h1>Mohib Amin</h1>
+  <p>Embedded Systems • Software • Web • Senior Design</p>
+</header>
 
-  <!-- FEATURED PROJECT -->
-  <section class="featured-section">
-    <div class="featured-card fade-in">
+<!-- FEATURED PROJECT -->
+<section class="featured">
+  <div class="featured-card">
+    <div class="featured-text">
+      <span class="eyebrow">Featured Senior Design</span>
+      <h2>Smart Parking Pathfinder</h2>
+      <p class="tags">Embedded Systems • Web • Real-Time Data</p>
 
-      <div class="featured-content">
-        <span class="featured-label">Featured Senior Design</span>
+      <p>
+        A real-time parking occupancy and navigation system integrating Arduino sensors,
+        LEDs, servos, and a live web dashboard using Flask and Socket.IO.
+      </p>
 
-        <h2>Smart Parking Pathfinder</h2>
-        <p class="tech">Embedded Systems • Web • Real-Time Data</p>
+      <ul>
+        <li>Arduino sensors classify spots as empty / occupied</li>
+        <li>WS2812 LEDs show availability in real time</li>
+        <li>Serial → Flask → Socket.IO live streaming</li>
+        <li>Interactive browser-based parking map</li>
+      </ul>
 
-        <p class="desc">
-          A real-time parking occupancy and navigation system integrating Arduino sensors,
-          LEDs, servos, and a live web dashboard using Flask and Socket.IO.
-        </p>
-
-        <ul>
-          <li>Arduino sensors classify spots as empty / occupied</li>
-          <li>WS2812 LEDs show availability in real time</li>
-          <li>Serial → Flask → Socket.IO live streaming</li>
-          <li>Interactive browser-based parking map</li>
-        </ul>
-
-        <!-- ✅ FIXED LINK -->
-        <a
-          href="https://github.com/KrishPAdmin/MEC-2025-Sr-Design-Parking-Garage"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-primary"
-        >
-          View Project →
-        </a>
-      </div>
-
-      <div class="featured-image">
-        <img src="assets/parking-map.png" alt="Smart Parking Dashboard" />
-      </div>
-
+      <!-- FIXED LINK -->
+      <a class="btn"
+         href="https://github.com/KrishPAdmin/MEC-2025-Sr-Design-Parking-Garage"
+         target="_blank">
+        View Project →
+      </a>
     </div>
-  </section>
 
-  <!-- PROJECTS -->
-  <section class="projects-section">
-    <h2 class="section-title">Selected Projects</h2>
+    <div class="featured-image">
+      <img src="assets/parking-map.png" alt="Smart Parking Dashboard">
+    </div>
+  </div>
+</section>
 
-    <!-- REQUIRED CONTAINER -->
-    <div id="repo-container" class="projects-grid"></div>
-  </section>
+<!-- SELECTED PROJECTS -->
+<section class="projects">
+  <h2>Selected Projects</h2>
 
-  <footer>
-    © 2025 Mohib Amin
-  </footer>
+  <div class="project-grid">
 
-  <script src="script.js"></script>
+    <div class="project-card">
+      <h3>ALU-GPU-Design</h3>
+      <span>Digital Logic • Hardware</span>
+      <p>ALU code design for GPU using decoder, FSM, ALU core, latches, and seven-segment displays.</p>
+      <a href="https://github.com/mohibamin/ALU-GPU-Design" target="_blank">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <h3>LibraryProjwithJavaFX</h3>
+      <span>JavaFX • Desktop App</span>
+      <p>No description provided.</p>
+      <a href="https://github.com/mohibamin/LibraryProjwithJavaFX" target="_blank">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Maze-Navigating-Robot</h3>
+      <span>Robotics • Algorithms</span>
+      <p>No description provided.</p>
+      <a href="https://github.com/mohibamin/Maze-Navigating-Robot" target="_blank">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Moflix</h3>
+      <span>Java • SQL • GUI</span>
+      <p>Java Swing & FX application with SQL-backed live-updating database.</p>
+      <a href="https://github.com/mohibamin/Moflix" target="_blank">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <h3>webdevproj</h3>
+      <span>HTML • CSS • JavaScript</span>
+      <p>A website designed with HTML, CSS, and JavaScript.</p>
+      <a href="https://github.com/mohibamin/webdevproj" target="_blank">View on GitHub →</a>
+    </div>
+
+    <!-- NEW CAMPUSCONNECT -->
+    <div class="project-card">
+      <h3>CampusConnect</h3>
+      <span>Web • Firebase • Auth</span>
+      <p>Campus event platform with role-based access, authentication, and analytics.</p>
+      <a href="https://github.com/mohibamin/campusconnect" target="_blank">View on GitHub →</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2025 Mohib Amin
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
+
