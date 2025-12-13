@@ -40,19 +40,22 @@ body {
   box-shadow: 0 0 30px rgba(0,234,255,0.8);
 }
 
+.linkedin-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .linkedin-btn img {
-  width: 44px;
-  height: 44px;
-  background: #00eaff;
-  padding: 10px;
-  border-radius: 50%;
-  box-shadow: 0 0 16px rgba(0,234,255,0.4);
-  transition: all 0.25s ease;
+  width: 28px;
+  height: 28px;
+  filter: invert(1); /* makes it white */
+  transition: filter 0.25s ease, transform 0.25s ease, drop-shadow 0.25s ease;
 }
 
 .linkedin-btn img:hover {
-  box-shadow: 0 0 28px rgba(0,234,255,0.9);
   transform: translateY(-2px);
+  filter: invert(1) drop-shadow(0 0 10px rgba(0,234,255,0.9));
 }
 
 /* HERO */
