@@ -212,3 +212,38 @@ body {
   to { transform: scale(1); opacity: 1; }
 }
 
+/* ===== ABOUT ME SECTION ===== */
+.about {
+  max-width: 1000px;
+  margin: 0 auto 140px;
+  padding: 0 20px;
+}
+
+.about-container {
+  background: linear-gradient(145deg, #0f2235, #0a1624);
+  border-radius: 24px;
+  padding: 46px;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.about p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.about p:last-child {
+  margin-bottom: 0;
+}
+
+.highlight {
+  color: #7ddcff;
+  font-weight: 600;
+}
+
