@@ -27,5 +27,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+// ===== SCROLL REVEAL =====
+const revealElements = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        observer.unobserve(entry.target); // animate once
+      }
+    });
+  },
+  {
+    threshold: 0.15, // how much of element must be visible
+  }
+);
+
+revealElements.forEach((el) => observer.observe(el));
+
 
 
