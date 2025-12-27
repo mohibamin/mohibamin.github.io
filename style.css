@@ -266,28 +266,6 @@ body {
 /* Slight stagger for cards */
 .project-card.reveal {
   transition-delay: 0.1s;
-/* ===== GLOBAL LETTER REVEAL ===== */
-
-.reveal-text {
-  visibility: hidden;
-}
-
-.reveal-text span.char {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(6px);
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
-}
-
-.reveal-text.visible {
-  visibility: visible;
-}
-
-.reveal-text.visible span.char {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 
