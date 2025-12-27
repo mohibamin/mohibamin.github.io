@@ -250,5 +250,22 @@ body {
 .featured-card:nth-of-type(2) .featured-image img:hover {
   box-shadow: 0 0 35px rgba(125, 220, 255, 0.8);
 }
+/* ===== SCROLL REVEAL ANIMATION ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slight stagger for cards */
+.project-card.reveal {
+  transition-delay: 0.1s;
+}
 
 
