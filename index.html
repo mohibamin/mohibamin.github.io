@@ -11,8 +11,8 @@
 <body>
 
 <!-- TOP LEFT -->
-<div class="top-left-actions">
-  <button class="btn contact-btn" id="openContact">Contact</button>
+<div class="top-left">
+  <button class="btn ghost-btn" id="contactBtn">Contact</button>
 </div>
 
 <!-- TOP RIGHT -->
@@ -21,12 +21,18 @@
     Download Resume
   </a>
 
-  <a class="linkedin-btn" href="https://www.linkedin.com/in/mohibamin/" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" />
+  <a class="icon-btn"
+     href="https://github.com/mohibamin"
+     target="_blank"
+     aria-label="GitHub">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg">
   </a>
 
-  <a class="github-btn" href="https://github.com/mohibamin" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" />
+  <a class="icon-btn"
+     href="https://www.linkedin.com/in/mohibamin/"
+     target="_blank"
+     aria-label="LinkedIn">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg">
   </a>
 </div>
 
@@ -62,14 +68,44 @@
   </div>
 </section>
 
+<!-- AI NPC PROJECT -->
+<section class="featured-card reveal">
+  <div class="featured-text">
+    <span class="eyebrow">Capstone Project</span>
+    <h2>AI-Powered NPC Behavior Modeling in Unity</h2>
+    <p class="tags">Unity • C# • ML-Agents • Reinforcement Learning</p>
+
+    <ul>
+      <li>Designed adaptive NPCs using reinforcement learning instead of scripts</li>
+      <li>Built custom observation/action spaces for navigation and combat</li>
+      <li>Benchmarked learned behavior vs scripted NPC logic</li>
+      <li>Improved stability through iterative reward tuning</li>
+    </ul>
+  </div>
+
+  <div class="featured-image">
+    <img src="assets/ng01capstone.png">
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section class="about reveal">
-  <h2>About Me</h2>
-  <p>
-    I’m a fourth-year Computer Engineering student at Toronto Metropolitan University with a strong interest in building systems at the intersection of hardware and software.
-    I enjoy designing solutions that are clean, intentional, and built to last.
-    Outside of engineering, I enjoy video games, streaming, basketball, and fitness.
-  </p>
+  <div class="about-container">
+    <h2>About Me</h2>
+    <p>
+      I’m a fourth-year <strong>Computer Engineering</strong> student at
+      <strong>Toronto Metropolitan University</strong> with a passion for building
+      systems that sit at the intersection of hardware and software.
+    </p>
+    <p>
+      My interests include embedded systems, AI, full-stack development,
+      and designing software that is clean, intentional, and built to last.
+    </p>
+    <p>
+      Outside of engineering, I enjoy video games, streaming, basketball,
+      fitness, and experimenting with new ideas through personal projects.
+    </p>
+  </div>
 </section>
 
 <!-- PROJECTS -->
@@ -77,19 +113,8 @@
   <h2 class="section-title">Selected Projects</h2>
 
   <div class="project-grid">
-    <div class="project-card">
-      <h3>ALU-GPU-Design</h3>
-      <span>Digital Logic • Hardware</span>
-      <p>ALU design using decoder, FSM, ALU core, latches, and seven-segment displays.</p>
-      <a href="https://github.com/mohibamin/ALU-GPU-Design" target="_blank">View on GitHub →</a>
-    </div>
-
-    <div class="project-card">
-      <h3>CampusConnect</h3>
-      <span>Web • Firebase • Auth</span>
-      <p>Campus event platform with role-based access, authentication, and analytics.</p>
-      <a href="https://github.com/mohibamin/CampusConnect" target="_blank">View on GitHub →</a>
-    </div>
+    <div class="project-card">…</div>
+    <!-- keep your existing project cards exactly -->
   </div>
 </section>
 
@@ -97,7 +122,7 @@
 <div id="imageModal">
   <div class="modal-content">
     <span class="close">&times;</span>
-    <img class="modal-img" />
+    <img class="modal-img">
   </div>
 </div>
 
@@ -105,32 +130,20 @@
 <div id="contactModal">
   <div class="contact-box">
     <span class="close-contact">&times;</span>
-    <h2>Contact Me</h2>
 
-    <form action="https://formsubmit.co/mohibamin786@gmail.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
+    <h3>Contact Me</h3>
 
-      <label>Name *</label>
-      <input type="text" name="name" required>
-
-      <label>Email *</label>
-      <input type="email" name="email" required>
-
-      <label>Subject *</label>
-      <input type="text" name="subject" required>
-
-      <label>Message *</label>
-      <textarea name="message" required></textarea>
-
-      <button class="btn primary-btn">Send Message</button>
+    <!-- 🔴 REPLACE action URL WITH YOUR FORMSPREE LINK -->
+    <form action="https://formspree.io/f/maqypvgp" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="subject" placeholder="Subject" required>
+      <textarea name="message" placeholder="Message" required></textarea>
+      <button class="btn primary-btn" type="submit">Send Message</button>
     </form>
-
-    <p class="secure-note">🔒 Your information is secure.</p>
   </div>
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
-
-
