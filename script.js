@@ -1,50 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  // IMAGE MODAL
   const modal = document.getElementById("imageModal");
   const modalImg = document.querySelector(".modal-img");
   const parkingImage = document.getElementById("parkingImage");
-  const closeBtn = document.querySelector(".close");
 
-  if (!modal || !modalImg || !parkingImage || !closeBtn) return;
-
-  // Open modal
-  parkingImage.addEventListener("click", () => {
+  parkingImage.onclick = () => {
     modal.style.display = "flex";
     modalImg.src = parkingImage.src;
-    document.body.style.overflow = "hidden";
-  });
+  };
 
-  // Close modal via X
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-    document.body.style.overflow = "";
-  });
+  modal.onclick = (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  };
 
-  // Close modal by clicking background
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-      document.body.style.overflow = "";
-    }
-  });
-});
-// ===== SCROLL REVEAL =====
-const revealElements = document.querySelectorAll(".reveal");
+  // CONTACT MODAL
+  const contactBtn = document.getElementById("contactBtn");
+  const contactModal = document.getElementById("contactModal");
+  const closeContact = document.querySelector(".close-contact");
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
+  contactBtn.onclick = () => contactModal.style.display = "flex";
+  closeContact.onclick = () => contactModal.style.display = "none";
+
+  // SCROLL REVEAL
+  const revealElements = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("active");
-        observer.unobserve(entry.target); // animate once
+        observer.unobserve(entry.target);
       }
     });
-  },
-  {
-    threshold: 0.15, // how much of element must be visible
-  }
-);
+  }, { threshold: 0.15 });
 
-revealElements.forEach((el) => observer.observe(el));
+  revealElements.forEach(el => observer.observe(el));
+});
+
 
 
 
