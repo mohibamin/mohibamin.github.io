@@ -1,40 +1,72 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // IMAGE MODAL
+  /* ================= IMAGE MODAL ================= */
   const modal = document.getElementById("imageModal");
   const modalImg = document.querySelector(".modal-img");
   const parkingImage = document.getElementById("parkingImage");
+  const closeBtn = document.querySelector(".close");
 
-  parkingImage.onclick = () => {
-    modal.style.display = "flex";
-    modalImg.src = parkingImage.src;
-  };
+  if (modal && modalImg && parkingImage && closeBtn) {
+    parkingImage.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = parkingImage.src;
+      document.body.style.overflow = "hidden";
+    });
 
-  modal.onclick = (e) => {
-    if (e.target === modal) modal.style.display = "none";
-  };
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+      document.body.style.overflow = "";
+    });
 
-  // CONTACT MODAL
-  const contactBtn = document.getElementById("contactBtn");
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      }
+    });
+  }
+
+  /* ================= SCROLL REVEAL ================= */
+  const revealElements = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  revealElements.forEach((el) => observer.observe(el));
+
+  /* ================= CONTACT MODAL ================= */
+  const contactBtn = document.getElementById("openContact");
   const contactModal = document.getElementById("contactModal");
   const closeContact = document.querySelector(".close-contact");
 
-  contactBtn.onclick = () => contactModal.style.display = "flex";
-  closeContact.onclick = () => contactModal.style.display = "none";
+  if (contactBtn && contactModal && closeContact) {
+    contactBtn.addEventListener("click", () => {
+      contactModal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
 
-  // SCROLL REVEAL
-  const revealElements = document.querySelectorAll(".reveal");
+    closeContact.addEventListener("click", () => {
+      contactModal.classList.remove("active");
+      document.body.style.overflow = "";
+    });
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-        observer.unobserve(entry.target);
+    contactModal.addEventListener("click", (e) => {
+      if (e.target === contactModal) {
+        contactModal.classList.remove("active");
+        document.body.style.overflow = "";
       }
     });
-  }, { threshold: 0.15 });
+  }
 
-  revealElements.forEach(el => observer.observe(el));
 });
 
 
