@@ -5,70 +5,76 @@
   <title>Mohib Amin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon -->
   <link rel="icon" href="assets/favicon.ico" />
 </head>
 <body>
-
-<!-- TOP LEFT -->
-<div class="top-left">
-  <button class="btn ghost-btn" id="contactBtn">Contact</button>
+  
+<!-- TOP LEFT ACTIONS -->
+<div class="top-left-actions">
+  <button class="btn contact-btn" id="openContact">Contact</button>
 </div>
 
-<!-- TOP RIGHT -->
-<div class="top-actions">
-  <a class="btn primary-btn" href="assets/Mohib Amin Engineering Resume 2026.pdf" download>
-    Download Resume
-  </a>
-
-  <a class="icon-btn"
-     href="https://github.com/mohibamin"
-     target="_blank"
-     aria-label="GitHub">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg">
-  </a>
-
-  <a class="icon-btn"
-     href="https://www.linkedin.com/in/mohibamin/"
-     target="_blank"
-     aria-label="LinkedIn">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg">
-  </a>
-</div>
-
-<!-- HERO -->
-<header class="hero reveal">
-  <h1>Mohib Amin</h1>
-  <p class="subtitle">Embedded Systems • Software • Web • Senior Design</p>
-</header>
-
-<!-- FEATURED PROJECT -->
-<section class="featured-card reveal">
-  <div class="featured-text">
-    <span class="eyebrow">Featured Senior Design</span>
-    <h2>Smart Parking Pathfinder</h2>
-    <p class="tags">Embedded Systems • Web • Real-Time Data</p>
-
-    <ul>
-      <li>Arduino sensors classify spots as empty / occupied</li>
-      <li>WS2812 LEDs show availability in real time</li>
-      <li>Serial → Flask → Socket.IO live streaming</li>
-      <li>Interactive browser-based parking map</li>
-    </ul>
-
-    <a class="btn primary-btn view-project-btn"
-       href="https://github.com/KrishPAdmin/MEC-2025-Sr-Design-Parking-Garage"
-       target="_blank">
-      View Project →
+  <!-- TOP RIGHT ACTIONS -->
+  <div class="top-actions">
+    <a class="btn primary-btn" href="assets/Mohib Amin Engineering Resume 2026.pdf" download>
+      Download Resume
     </a>
+
+    <a class="linkedin-btn"
+       href="https://www.linkedin.com/in/mohibamin/"
+       target="_blank"
+       aria-label="LinkedIn">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+    </a>
+    
+    <a class="github-btn"
+   href="https://github.com/mohibamin"
+   target="_blank"
+   aria-label="GitHub">
+  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
+</a>
+
   </div>
 
-  <div class="featured-image">
-    <img id="parkingImage" src="assets/parking-map.png" alt="Parking Map">
-  </div>
-</section>
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Mohib Amin</h1>
+    <p class="subtitle">Embedded Systems • Software • Web • Senior Design</p>
+  </header>
 
-<!-- AI NPC PROJECT -->
+  <!-- FEATURED PROJECT -->
+  <section class="featured-card">
+    <div class="featured-text">
+      <span class="eyebrow">Featured Senior Design</span>
+      <h2>Smart Parking Pathfinder</h2>
+      <p class="tags">Embedded Systems • Web • Real-Time Data</p>
+
+      <ul>
+        <li>Arduino sensors classify spots as empty / occupied</li>
+        <li>WS2812 LEDs show availability in real time</li>
+        <li>Serial → Flask → Socket.IO live streaming</li>
+        <li>Interactive browser-based parking map</li>
+      </ul>
+
+      <a class="btn primary-btn view-project-btn"
+         href="https://github.com/KrishPAdmin/MEC-2025-Sr-Design-Parking-Garage"
+         target="_blank"
+         rel="noopener noreferrer">
+        View Project →
+      </a>
+    </div>
+
+    <div class="featured-image">
+      <img id="parkingImage" src="assets/parking-map.png" alt="Parking Map">
+    </div>
+  </section>
+
+  
+  <!-- FEATURED PROJECT: AI NPC -->
 <section class="featured-card reveal">
   <div class="featured-text">
     <span class="eyebrow">Capstone Project</span>
@@ -76,74 +82,154 @@
     <p class="tags">Unity • C# • ML-Agents • Reinforcement Learning</p>
 
     <ul>
-      <li>Designed adaptive NPCs using reinforcement learning instead of scripts</li>
-      <li>Built custom observation/action spaces for navigation and combat</li>
-      <li>Benchmarked learned behavior vs scripted NPC logic</li>
-      <li>Improved stability through iterative reward tuning</li>
+      <li>
+        Designed a Unity-based 3D game environment with adaptive NPCs trained
+        using reinforcement learning, replacing traditional scripted behaviors
+        with dynamic, context-aware decision making during gameplay.
+      </li>
+      <li>
+        Implemented AI agents using Unity ML-Agents with custom observation and
+        action spaces, enabling intelligent navigation, combat engagement,
+        survival tactics, and responsive player interaction.
+      </li>
+      <li>
+        Evaluated AI-driven NPC performance against scripted logic through
+        structured gameplay testing and controlled simulations to assess realism,
+        adaptability, learning efficiency, and in-game responsiveness.
+      </li>
+      <li>
+        Refined agent behavior through iterative training cycles by tuning reward
+        functions and policies, improving stability, convergence speed, and
+        reducing erratic or non-optimal decision patterns.
+      </li>
     </ul>
+
+    <!-- Optional link (remove if you don’t want one yet) -->
+    <a class="btn primary-btn view-project-btn" href="https://github.com/mohibamin/NG01Capstone" target="_blank">
+      View Project →
+    </a>
   </div>
 
   <div class="featured-image">
-    <img src="assets/ng01capstone.png">
+    <img src="assets/ng01capstone.png" alt="AI NPC Behavior Modeling in Unity">
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT ME -->
 <section class="about reveal">
   <div class="about-container">
     <h2>About Me</h2>
+
     <p>
-      I’m a fourth-year <strong>Computer Engineering</strong> student at
-      <strong>Toronto Metropolitan University</strong> with a passion for building
-      systems that sit at the intersection of hardware and software.
+      I’m a fourth-year <span class="highlight">Computer Engineering</span> student at
+      <span class="highlight">Toronto Metropolitan University</span>, with a strong interest
+      in building systems that sit at the intersection of hardware and software.
     </p>
+
     <p>
-      My interests include embedded systems, AI, full-stack development,
-      and designing software that is clean, intentional, and built to last.
+      My technical focus areas include embedded systems, real-time applications, and
+      full-stack development. I enjoy designing solutions that are
+      <strong>clean, intentional, and built to last</strong>, whether that’s through
+      microcontroller-based projects or modern web platforms.
     </p>
+
     <p>
-      Outside of engineering, I enjoy video games, streaming, basketball,
-      fitness, and experimenting with new ideas through personal projects.
+      Outside of engineering, I spend a lot of my time playing and streaming video games,
+      staying active through basketball and fitness, and exploring new ideas through
+      personal projects. I’m always looking to learn, improve, and take on challenges
+      that push me beyond my comfort zone.
     </p>
   </div>
 </section>
+  
+  <!-- PROJECTS -->
+  <section class="projects reveal">
+    <h2 class="section-title">Selected Projects</h2>
 
-<!-- PROJECTS -->
-<section class="projects reveal">
-  <h2 class="section-title">Selected Projects</h2>
+    <div class="project-grid reveal">
+      <div class="project-card reveal">
+        <h3>ALU-GPU-Design</h3>
+        <span>Digital Logic • Hardware</span>
+        <p>ALU design using decoder, FSM, ALU core, latches, and seven-segment displays.</p>
+        <a href="https://github.com/mohibamin/ALU-GPU-Design" target="_blank">View on GitHub →</a>
+      </div>
 
-  <div class="project-grid">
-    <div class="project-card">…</div>
-    <!-- keep your existing project cards exactly -->
+      <div class="project-card reveal">
+        <h3>LibraryProjwithJavaFX</h3>
+        <span>JavaFX • Desktop App</span>
+        <p>No description provided.</p>
+        <a href="https://github.com/mohibamin/LibraryProjwithJavaFX" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="project-card reveal">
+        <h3>Maze-Navigating-Robot</h3>
+        <span>Robotics • Algorithms</span>
+        <p>No description provided.</p>
+        <a href="https://github.com/mohibamin/Maze-Navigating-Robot" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="project-card reveal">
+        <h3>Moflix</h3>
+        <span>Java • SQL • GUI</span>
+        <p>Java Swing & FX app with SQL-backed live-updating database.</p>
+        <a href="https://github.com/mohibamin/Moflix" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="project-card reveal">
+        <h3>webdevproj</h3>
+        <span>HTML • CSS • JavaScript</span>
+        <p>Website designed with HTML, CSS, and JavaScript.</p>
+        <a href="https://github.com/mohibamin/webdevproj" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="project-card reveal">
+        <h3>CampusConnect</h3>
+        <span>Web • Firebase • Auth</span>
+        <p>Campus event platform with role-based access, authentication, and analytics.</p>
+        <a href="https://github.com/mohibamin/CampusConnect" target="_blank">View on GitHub →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE MODAL (MUST BE DIRECT CHILD OF BODY) -->
+  <div id="imageModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img class="modal-img" src="" alt="Expanded Project Image">
+    </div>
   </div>
-</section>
 
-<!-- IMAGE MODAL -->
-<div id="imageModal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img class="modal-img">
-  </div>
-</div>
+  <!-- JS -->
+  <script src="script.js"></script>
 
-<!-- CONTACT MODAL -->
+  <!-- CONTACT MODAL -->
 <div id="contactModal">
   <div class="contact-box">
     <span class="close-contact">&times;</span>
 
-    <h3>Contact Me</h3>
+    <h2>Contact Me</h2>
 
-    <!-- 🔴 REPLACE action URL WITH YOUR FORMSPREE LINK -->
-    <form action="https://formspree.io/f/maqypvgp" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="text" name="subject" placeholder="Subject" required>
-      <textarea name="message" placeholder="Message" required></textarea>
+    <form action="https://formsubmit.co/mohibamin786@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+
+      <label>Name *</label>
+      <input type="text" name="name" required>
+
+      <label>Email *</label>
+      <input type="email" name="email" required>
+
+      <label>Subject *</label>
+      <input type="text" name="subject" required>
+
+      <label>Message *</label>
+      <textarea name="message" required></textarea>
+
       <button class="btn primary-btn" type="submit">Send Message</button>
     </form>
+
+    <p class="secure-note">🔒 Your information is secure.</p>
   </div>
 </div>
 
-<script src="script.js"></script>
 </body>
 </html>
