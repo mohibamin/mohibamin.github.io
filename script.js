@@ -1,76 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ===============================
-     IMAGE MODAL (ALL PROJECT IMAGES)
-     =============================== */
-
+  /* ================= IMAGE MODAL ================= */
   const modal = document.getElementById("imageModal");
-  const modalImg = modal?.querySelector(".modal-img");
-  const closeImgBtn = modal?.querySelector(".close");
+  const modalImg = document.querySelector(".modal-img");
+  const parkingImage = document.getElementById("parkingImage");
+  const closeBtn = document.querySelector(".close");
 
-  const clickableImages = document.querySelectorAll(".featured-image img");
-
-  clickableImages.forEach((img) => {
-    img.addEventListener("click", () => {
-      if (!modal || !modalImg) return;
-
-      modal.classList.add("active");
-      modalImg.src = img.src;
+  if (modal && modalImg && parkingImage && closeBtn) {
+    parkingImage.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = parkingImage.src;
       document.body.style.overflow = "hidden";
     });
-  });
 
-  closeImgBtn?.addEventListener("click", () => {
-    modal.classList.remove("active");
-    document.body.style.overflow = "";
-  });
-
-  modal?.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.remove("active");
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
       document.body.style.overflow = "";
-    }
-  });
+    });
 
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      }
+    });
+  }
 
-  /* ===============================
-     CONTACT MODAL
-     =============================== */
-
-  const contactBtn = document.getElementById("contactBtn");
-  const contactModal = document.getElementById("contactModal");
-  const contactClose = document.querySelector(".contact-close");
-
-  contactBtn?.addEventListener("click", () => {
-    contactModal.classList.add("active");
-    document.body.style.overflow = "hidden";
-  });
-
-  contactClose?.addEventListener("click", () => {
-    contactModal.classList.remove("active");
-    document.body.style.overflow = "";
-  });
-
-  contactModal?.addEventListener("click", (e) => {
-    if (e.target === contactModal) {
-      contactModal.classList.remove("active");
-      document.body.style.overflow = "";
-    }
-  });
-
-
-  /* ===============================
-     SCROLL REVEAL
-     =============================== */
-
+  /* ================= SCROLL REVEAL ================= */
   const revealElements = document.querySelectorAll(".reveal");
 
   const observer = new IntersectionObserver(
-    (entries, obs) => {
+    (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("active");
-          obs.unobserve(entry.target);
+          observer.unobserve(entry.target);
         }
       });
     },
@@ -78,6 +42,30 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   revealElements.forEach((el) => observer.observe(el));
+
+  /* ================= CONTACT MODAL ================= */
+  const contactBtn = document.getElementById("openContact");
+  const contactModal = document.getElementById("contactModal");
+  const closeContact = document.querySelector(".close-contact");
+
+  if (contactBtn && contactModal && closeContact) {
+    contactBtn.addEventListener("click", () => {
+      contactModal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+
+    closeContact.addEventListener("click", () => {
+      contactModal.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+
+    contactModal.addEventListener("click", (e) => {
+      if (e.target === contactModal) {
+        contactModal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+  }
 
 });
 
