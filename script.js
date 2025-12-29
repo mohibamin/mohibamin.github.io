@@ -53,32 +53,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   revealElements.forEach((el) => observer.observe(el));
 
-  /* ===============================
-     CONTACT MODAL
-     =============================== */
+// ===== CONTACT MODAL =====
+const contactBtn = document.getElementById("contactBtn");
+const contactModal = document.getElementById("contactModal");
+const contactClose = document.querySelector(".contact-close");
 
-  const contactBtn = document.getElementById("contactBtn");
-  const contactModal = document.getElementById("contactModal");
-  const contactClose = document.querySelector(".contact-close");
+if (contactBtn && contactModal && contactClose) {
+  contactBtn.addEventListener("click", () => {
+    contactModal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  });
 
-  if (contactBtn && contactModal && contactClose) {
-    contactBtn.addEventListener("click", () => {
-      contactModal.classList.add("active");
-      document.body.style.overflow = "hidden";
-    });
+  contactClose.addEventListener("click", () => {
+    contactModal.classList.remove("active");
+    document.body.style.overflow = "";
+  });
 
-    contactClose.addEventListener("click", () => {
+  contactModal.addEventListener("click", (e) => {
+    if (e.target === contactModal) {
       contactModal.classList.remove("active");
       document.body.style.overflow = "";
-    });
+    }
+  });
+}
 
-    contactModal.addEventListener("click", (e) => {
-      if (e.target === contactModal) {
-        contactModal.classList.remove("active");
-        document.body.style.overflow = "";
-      }
-    });
-  }
 
 });
 
