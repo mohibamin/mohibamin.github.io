@@ -84,33 +84,8 @@ body {
   grid-template-columns: 1.2fr 1fr;
   gap: 40px;
   border-radius: 24px;
-  position: relative;
-  z-index: 1;
   background: linear-gradient(145deg, #0f2235, #0a1624);
 }
-
-.featured-card::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  background-size: 200% 200%;
-  animation: glowWave 6s linear infinite;
-  z-index: 0;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(0,234,255,0.15),
-    transparent
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.featured-card:hover::before {
-  opacity: 0.35;
-}
-
 
 .eyebrow {
   font-size: 0.8rem;
@@ -132,7 +107,7 @@ body {
 }
 
 .view-project-btn {
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 /* FEATURED IMAGE */
@@ -177,38 +152,6 @@ body {
   transform: translateY(-6px);
   box-shadow: 0 0 30px rgba(0,234,255,0.35);
 }
-
-/* ================= ANIMATED GLOW ================= */
-@keyframes pulseGlow {
-  0% {
-    box-shadow: 0 0 20px rgba(0,234,255,0.35);
-  }
-  50% {
-    box-shadow:
-      0 0 30px rgba(0,234,255,0.65),
-      0 0 60px rgba(0,234,255,0.25);
-  }
-  100% {
-    box-shadow: 0 0 20px rgba(0,234,255,0.35);
-  }
-}
-
-@keyframes glowWave {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
-}
-
-
-/* Apply to interactive cards */
-.featured-card:hover,
-.project-card:hover {
-  animation: pulseGlow 2.5s ease-in-out infinite;
-}
-
 
 .project-card span {
   font-size: 0.85rem;
@@ -463,7 +406,6 @@ body {
    MOBILE RESPONSIVENESS
 ===================================================== */
 @media (max-width: 768px) {
-  
 
   /* Top buttons spacing */
   .top-actions {
@@ -553,12 +495,6 @@ body {
     padding: 26px;
   }
 
-/* Disable hover animations on mobile */
-  .featured-card:hover,
-  .project-card:hover {
-    animation: none;
-  }
-  
 }
 
 .reveal-text.active .char {
