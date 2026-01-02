@@ -84,6 +84,8 @@ body {
   grid-template-columns: 1.2fr 1fr;
   gap: 40px;
   border-radius: 24px;
+  position: relative;
+  z-index: 1;
   background: linear-gradient(145deg, #0f2235, #0a1624);
 }
 
@@ -92,6 +94,9 @@ body {
   position: absolute;
   inset: -2px;
   border-radius: inherit;
+  background-size: 200% 200%;
+  animation: glowWave 6s linear infinite;
+  z-index: 0;
   background: linear-gradient(
     120deg,
     transparent,
@@ -103,7 +108,7 @@ body {
 }
 
 .featured-card:hover::before {
-  opacity: 1;
+  opacity: 0.35;
 }
 
 
@@ -187,6 +192,16 @@ body {
     box-shadow: 0 0 20px rgba(0,234,255,0.35);
   }
 }
+
+@keyframes glowWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
 
 /* Apply to interactive cards */
 .featured-card:hover,
