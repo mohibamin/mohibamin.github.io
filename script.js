@@ -118,6 +118,35 @@ if (!isTouchDevice) {
   animate();
 }
 
+/* ================= AMBIENT BACKGROUND PARTICLES ================= */
+
+const layer = document.getElementById("ambient-particles-layer");
+
+const PARTICLE_COUNT = 150;
+
+for (let i = 0; i < PARTICLE_COUNT; i++) {
+  const p = document.createElement("div");
+  p.className = "ambient-particle";
+
+  // keep them on sides + top only
+  const side = Math.random();
+  if (side < 0.33) {
+    p.style.left = Math.random() * 25 + "vw";      // left side
+    p.style.top = Math.random() * 100 + "vh";
+  } else if (side < 0.66) {
+    p.style.left = 85 + Math.random() * 25 + "vw"; // right side
+    p.style.top = Math.random() * 100 + "vh";
+  } else {
+    p.style.left = Math.random() * 100 + "vw";     // top
+    p.style.top = Math.random() * 25 + "vh";
+  }
+
+  p.style.animationDuration = 20 + Math.random() * 25 + "s";
+  p.style.animationDelay = Math.random() * 10 + "s";
+
+  layer.appendChild(p);
+}
+
 
 
 
