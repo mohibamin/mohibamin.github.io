@@ -6,9 +6,22 @@
 }
 
 body {
+  position: relative;
   background: radial-gradient(circle at top, #0b1b2b, #050a12);
   color: #e8f1ff;
   min-height: 100vh;
+}
+
+
+/* ===============================
+   BACKGROUND PARTICLE LAYER
+================================ */
+#ambient-particles-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
 
 /* TOP ACTIONS */
@@ -500,6 +513,49 @@ body {
 .reveal-text.active .char {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* =====================================================
+   AMBIENT BACKGROUND PARTICLES (SIDE / TOP ONLY)
+===================================================== */
+
+
+/* ensure all site content stays above particles */
+
+.ambient-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: rgba(180, 230, 255, 0.35);
+
+  animation-name: floatParticle;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 90s;   /* ⬅️ VERY SLOW */
+}
+
+
+
+@keyframes floatParticle {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(60px, -40px); /* ⬅️ smaller drift */
+    opacity: 1;
+  }
+}
+
+
+
+/* reduce particles on mobile */
+@media (max-width: 768px) {
+  .ambient-particle {
+    display: none;
+  }
 }
 
 
