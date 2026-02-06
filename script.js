@@ -186,11 +186,6 @@ document.querySelectorAll(".gallery").forEach(gallery => {
   updateGallery();
 });
 
-const mobileToggle = document.getElementById("mobileToggle");
-
-mobileToggle?.addEventListener("click", () => {
-  document.body.classList.toggle("mobile-nav-open");
-});
 
 
 
