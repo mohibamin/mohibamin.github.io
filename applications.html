@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Applications | Mohib Amin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.ico" />
+</head>
+
+<body>
+
+<!-- Ambient background particles -->
+<div id="ambient-particles-layer"></div>
+
+<!-- TOP LEFT -->
+<div class="top-left-actions">
+  <a class="home-nav-btn" href="index.html">Home</a>
+  <button class="btn contact-btn" id="openContact">Contact</button>
+</div>
+
+
+
+
+<!-- TOP RIGHT -->
+<div class="top-actions">
+  <a class="btn applications-btn active" href="applications.html">
+    Applications
+  </a>
+
+  <a class="btn primary-btn"
+     href="assets/Mohib Amin Engineering Resume 2026.pdf"
+     download>
+    Download Resume
+  </a>
+
+  <a class="linkedin-btn"
+     href="https://www.linkedin.com/in/mohibamin/"
+     target="_blank"
+     aria-label="LinkedIn">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+  </a>
+
+  <a class="github-btn"
+     href="https://github.com/mohibamin"
+     target="_blank"
+     aria-label="GitHub">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
+  </a>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <h1>Applications</h1>
+  <p class="subtitle">
+    Real-world systems I’ve designed, built, and deployed — where engineering meets application.
+  </p>
+</header>
+
+<!-- APPLICATIONS LIST -->
+<section class="applications-list">
+
+  <!-- PROJECT 1 -->
+  <article class="application-row reveal application-card">
+    <div class="application-image gallery" data-gallery="mosh">
+  <button class="gallery-nav prev">‹</button>
+
+  <img src="/assets/mosh.png" class="gallery-image active" alt="Mosh Screenshot 1">
+  <img src="/assets/mosh1.png" class="gallery-image" alt="Mosh Screenshot 2">
+  <img src="/assets/mosh2.png" class="gallery-image" alt="Mosh Screenshot 3">
+
+  <button class="gallery-nav next">›</button>
+
+  <div class="gallery-progress">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+
+    <div class="application-content">
+      <h2>Mosh - Discord Job Finder Bot</h2>
+
+      <p class="application-desc">
+        A configurable Discord bot that automatically scans Workday-based career portals, filters roles by location, seniority, and domain, and delivers real-time job alerts to Discord servers. Built with Python, Playwright, and Discord’s Interaction API, the bot handles multi-location roles, region-based filtering, and scalable background scanning across multiple servers.
+      </p>
+
+      <div class="tech-stack">
+        <span>Python</span>
+        <span>Discord API</span>
+        <span>Playwright</span>
+        <span>Web Scraping</span>
+        <span>Automation</span>
+      </div>
+
+      <a class="application-link" href="https://discord.com/oauth2/authorize?client_id=1468477790956290090&permissions=83968&integration_type=0&scope=bot" target="_blank">
+       Discord Bot Invite Link →
+      </a>
+    </div>
+  </article>
+
+  <!-- PROJECT 2 -->
+   <!--
+  <article class="application-row reveal">
+    <div class="application-image">
+      <img src="/assets/apple-health.png" alt="Apple Health Wrapped Preview">
+    </div>
+
+    <div class="application-content">
+      <h2>Apple Health Wrapped</h2>
+
+      <p class="application-desc">
+        A personal data recap inspired by Spotify Wrapped, built by parsing Apple Health & Fitness
+        XML exports and aggregating yearly metrics such as sleep, workouts, heart rate, and movement.
+      </p>
+
+      <div class="tech-stack">
+        <span>Python</span>
+        <span>FastAPI</span>
+        <span>React</span>
+        <span>TypeScript</span>
+        <span>Apple Health XML</span>
+        <span>Data Parsing</span>
+      </div>
+
+      <a class="application-link" href="#" target="_blank">
+        View Project →
+      </a>
+    </div>
+  </article>
+  -->
+
+  <!-- PROJECT 3 -->
+  <!--
+  <article class="application-row reveal">
+    <div class="application-image">
+      <img src="/assets/qsense.png" alt="QSense Preview">
+    </div>
+
+    <div class="application-content">
+      <h2>QSense</h2>
+
+      <p class="application-desc">
+        An evolving smart ecosystem that bridges embedded hardware, cloud services, and mobile
+        interfaces. Starting with QClock, a smart prayer and lifestyle display, and expanding
+        toward a modular smart home platform.
+      </p>
+
+      <div class="tech-stack">
+        <span>ESP32</span>
+        <span>Embedded C++</span>
+        <span>IoT</span>
+        <span>BLE / WiFi</span>
+        <span>Python</span>
+        <span>Django APIs</span>
+        <span>React Native</span>
+      </div>
+
+      <a class="application-link" href="#" target="_blank">
+        Learn More →
+      </a>
+    </div>
+  </article>
+-->
+</section>
+
+
+<!-- Shared JS -->
+<script src="script.js"></script>
+
+<div id="contactModal">
+  <div class="contact-box">
+    <span class="close-contact">&times;</span>
+
+    <h2>Contact Me</h2>
+
+    <form action="https://formsubmit.co/mohibamin786@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+
+      <label>Name *</label>
+      <input type="text" name="name" required>
+
+      <label>Email *</label>
+      <input type="email" name="email" required>
+
+      <label>Subject *</label>
+      <input type="text" name="subject" required>
+
+      <label>Message *</label>
+      <textarea name="message" required></textarea>
+
+      <button class="btn primary-btn" type="submit">
+        Send Message
+      </button>
+    </form>
+
+    <p class="secure-note">🔒 Your information is secure.</p>
+  </div>
+</div>
+
+
+</body>
+</html>
+
