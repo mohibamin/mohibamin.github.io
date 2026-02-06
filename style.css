@@ -42,6 +42,70 @@ body {
   transition: all 0.25s ease;
 }
 
+
+
+/* =====================================================
+   APPLICATIONS BUTTON (UNIQUE ACCENT)
+===================================================== */
+
+.applications-btn {
+  background: rgba(120, 90, 255, 0.12);
+  color: #b7a6ff;
+  border: 2px solid rgba(140, 120, 255, 0.45);
+  box-shadow: 0 0 14px rgba(140, 120, 255, 0.25);
+}
+
+.applications-btn:hover {
+  background: rgba(140, 120, 255, 0.18);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px rgba(160, 140, 255, 0.65);
+}
+
+/* =====================================================
+   HOME NAV BUTTON (ISOLATED, SAFE)
+===================================================== */
+
+/* =====================================================
+   HOME NAV BUTTON (PURPLE, NAV-LEVEL)
+===================================================== */
+
+/* =====================================================
+   HOME NAV BUTTON (MATCH CONTACT SIZE EXACTLY)
+===================================================== */
+
+.home-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 22px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1;               /* fixes text height */
+
+  border-radius: 999px;
+  border: 2px solid rgba(160, 140, 255, 0.45);
+  background: rgba(120, 90, 255, 0.08);
+
+  color: #c7baff;
+  text-decoration: none;
+
+  box-shadow: 0 0 14px rgba(140, 120, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.home-nav-btn:hover {
+  background: rgba(140, 120, 255, 0.14);
+  box-shadow: 0 0 28px rgba(160, 140, 255, 0.55);
+}
+
+
+
+
+
+
 .primary-btn {
   background: #00eaff;
   color: #001016;
@@ -72,6 +136,8 @@ body {
   transform: translateY(-2px);
   filter: invert(1) drop-shadow(0 0 12px rgba(0,234,255,0.95));
 }
+
+
 
 /* HERO */
 .hero {
@@ -557,6 +623,195 @@ body {
     display: none;
   }
 }
+
+/* =====================================================
+   APPLICATIONS – VERTICAL PROJECT LAYOUT
+===================================================== */
+
+.applications-list {
+  max-width: 1200px;
+  margin: 0 auto 140px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.application-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.application-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+  box-shadow: 0 0 40px rgba(0, 234, 255, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.application-row:hover .application-image img {
+  transform: scale(1.02);
+  box-shadow: 0 0 60px rgba(160, 140, 255, 0.45);
+}
+
+.application-content h2 {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+
+.application-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  max-width: 620px;
+  margin-bottom: 18px;
+}
+
+/* Tech stack pills */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.tech-stack span {
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  opacity: 0.9;
+}
+
+/* Link */
+.application-link {
+  color: #b7a6ff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.application-link:hover {
+  text-decoration: underline;
+}
+
+/* =====================================================
+   MOBILE STACKING
+===================================================== */
+
+@media (max-width: 900px) {
+  .application-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .application-content h2 {
+    font-size: 1.6rem;
+  }
+}
+
+.application-card {
+  background: linear-gradient(
+    145deg,
+    rgba(120, 90, 255, 0.08),
+    rgba(20, 20, 40, 0.85)
+  );
+  border: 1px solid rgba(140, 120, 255, 0.25);
+  border-radius: 28px;
+  padding: 48px;
+  box-shadow: 0 0 60px rgba(120, 90, 255, 0.15);
+}
+
+.gallery {
+  position: relative;
+}
+
+.gallery-image {
+  display: none;
+  width: 100%;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-image.active {
+  display: block;
+}
+
+/* =====================================================
+   GALLERY NAV – MINIMAL OUTSIDE ARROWS
+===================================================== */
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(200, 190, 255, 0.75);
+  font-size: 42px;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+/* Position arrows OUTSIDE image */
+.gallery-nav.prev {
+  left: -34px;
+}
+
+.gallery-nav.next {
+  right: -34px;
+}
+
+/* Hover effect */
+.gallery-nav:hover {
+  color: #cbbcff;
+  transform: translateY(-50%) scale(1.15);
+}
+
+/* Remove focus outline ring */
+.gallery-nav:focus {
+  outline: none;
+}
+
+
+.gallery-progress {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.gallery-progress .dot {
+  width: 28px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.gallery-progress .dot.active {
+  background: linear-gradient(90deg, #b7a6ff, #00eaff);
+}
+
+@media (max-width: 900px) {
+  .application-card {
+    padding: 28px;
+  }
+
+  .gallery-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 26px;
+  }
+}
+
+
 
 
 
