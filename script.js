@@ -147,6 +147,45 @@ for (let i = 0; i < PARTICLE_COUNT; i++) {
   layer.appendChild(p);
 }
 
+document.querySelectorAll(".gallery").forEach(gallery => {
+  const images = gallery.querySelectorAll(".gallery-image");
+  const dots = gallery.querySelectorAll(".dot");
+  const prev = gallery.querySelector(".prev");
+  const next = gallery.querySelector(".next");
+
+  let index = 0;
+
+  function updateGallery() {
+    images.forEach((img, i) => {
+      img.classList.toggle("active", i === index);
+      dots[i]?.classList.toggle("active", i === index);
+    });
+  }
+
+  prev.addEventListener("click", () => {
+    index = (index - 1 + images.length) % images.length;
+    updateGallery();
+  });
+
+  next.addEventListener("click", () => {
+    index = (index + 1) % images.length;
+    updateGallery();
+  });
+
+  // click image to zoom (uses your existing modal)
+  images.forEach(img => {
+    img.addEventListener("click", () => {
+      const modal = document.getElementById("imageModal");
+      const modalImg = modal.querySelector(".modal-img");
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  updateGallery();
+});
+
 
 
 
